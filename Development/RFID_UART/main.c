@@ -86,6 +86,46 @@ const byte header[] = { 0xAA, 0xAA, 0xFF };
 #define GPIO_INTERRUPT_PRIORITY (7u)
 
 /*******************************************************************************
+* Commands
+*******************************************************************************/
+//command untuk membaca device address
+const byte cmd_readDevice[] = { 0xAA, 0xAA, 0xFF, 0x06, 0x05, 0x01, 0xFF, 0x1B, 0xA2 };
+//command untuk setting frequency region 920.125~924.875MHz
+const byte cmd_setFreqRegion[] = { 0xAA, 0xAA, 0xFF, 0x06, 0x30, 0x00, 0x01, 0x08, 0x17 };
+//command untuk setting work frequency channel
+const byte cmd_setFreqCh[] = { 0xAA, 0xAA, 0xFF, 0x06, 0x32, 0x00, 0x00, 0x76, 0x56 };
+//command untuk turn Automatic Frequency Hopping Mode on
+const byte cmd_autoFreqHop[] = { 0xAA, 0xAA, 0xFF, 0x06, 0x37, 0x00, 0xFF, 0x83, 0x56 };
+//command untuk Set RF Emission Power Capacity 0BB8 = 3000 = 30 dBm
+//byte cmd_PowEmmCap[] = {0xAA,0xAA,0xFF,0x07,0x3B,0x00,0x0B,0xB8,0xEB,0x5E};
+//command untuk Set RF Emission Power Capacity 14 dBm
+//byte cmd_PowEmmCap[] = { 0xAA, 0xAA, 0xFF, 0x07, 0x3B, 0x00, 0x05, 0x78, 0x11, 0x1D };
+//command untuk Set RF Emission Power Capacity 20 dBm
+//byte cmd_PowEmmCap[] = {0xAA,0xAA,0xFF,0x07,0x3B,0x00,0x07,0xD0,0x43,0x9D};
+//command untuk Set RF Emission Power Capacity 30 dBm
+const byte cmd_PowEmmCap[] = { 0xAA, 0xAA, 0xFF, 0x07, 0x3B, 0x00, 0x0B, 0xB8, 0xEB, 0x5E };
+// command untuk single tag inventory
+// byte cmd6[] = {0xAA,0xAA,0xFF,0x05,0xC8,0x00,0x3A,0x5E};
+// command untuk set working parameters of the antenna
+// jumlah antenna 1, port 1, polling open, power 30 dBm, batas kali bacaan per antenna 10
+//byte cmd_setWorkParam[] = {0xAA, 0xAA, 0xFF, 0x0E, 0x3F, 0x00, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x0B, 0xB8, 0x0A, 0x21, 0xB2};
+// jumlah antenna 1, port 1, polling open, power 10 dBm, batas kali bacaan per antenna 10
+//byte cmd_setWorkParam[] = {0xAA, 0xAA, 0xFF, 0x0E, 0x3F, 0x00, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x03, 0xE8, 0x0A, 0x86, 0xAC};
+// jumlah antenna 1, port 1, polling open, power 14 dBm, batas kali bacaan per antenna 10
+//byte cmd_setWorkParam[] = {0xAA, 0xAA, 0xFF, 0x0F, 0x3F, 0x00, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x05, 0x78, 0x00, 0x0A, 0x09, 0x0C};
+// jumlah antenna 1, port 1, polling open, power 20 dBm, batas kali bacaan per antenna 200
+//byte cmd_setWorkParam[] = {0xAA, 0xAA, 0xFF, 0x0F, 0x3F, 0x00, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x07, 0xD0, 0x00, 0xC8, 0x09, 0x57};
+// jumlah antenna 1, port 1, polling open, power 30 dBm, batas kali bacaan per antenna 200
+const byte cmd_setWorkParam[] = { 0xAA, 0xAA, 0xFF, 0x0F, 0x3F, 0x00, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x0B, 0xB8, 0x00, 0xC8, 0x74, 0xAF };
+// command untuk start multiple tags in inventory
+// mulai multiple read
+const byte `cmd_startRead[] = { 0xAA, 0xAA, 0xFF, 0x08, 0xC1, 0x00, 0x08, 0x00, 0x00, 0x60, 0x4A };
+//menghentikan multiple read
+const byte cmd_stopRead[] = { 0xAA, 0xAA, 0xFF, 0x05, 0xC0, 0x00, 0xB3, 0xF7 };
+//reset reader
+// byte cmd_readDevice0[] = { 0xAA, 0xAA, 0xFF, 0x05, 0x0F, 0x00, 0xB5, 0x9D };
+
+/*******************************************************************************
 * Global Variables
 *******************************************************************************/
 volatile bool gpio_intr_flag = false;
@@ -100,7 +140,24 @@ static void gpio_interrupt_handler(void *handler_arg, cyhal_gpio_event_t event);
 /*******************************************************************************
 * Function Definitions
 *******************************************************************************/
+/*******************************************************************************
+* Function Name: mainTask
+********************************************************************************/
+void blinky(void * arg)
+{
+    (void)arg;
 
+    /* Initialize the LED GPIO pin */
+    cyhal_gpio_init(LED_GPIO, CYHAL_GPIO_DIR_OUTPUT,
+                    CYHAL_GPIO_DRIVE_STRONG, CYBSP_LED_STATE_OFF);
+
+    for(;;)
+    {
+        /* Toggle the LED periodically */
+        cyhal_gpio_toggle(LED_GPIO);
+        vTaskDelay(500);
+    }
+}
 
 /*******************************************************************************
 * Function Name: handle_error
@@ -205,7 +262,6 @@ int main(void)
     printf("***********************************************************\r\n");
     printf("HAL: RFID UART Transmit and Receive\r\n");
     printf("***********************************************************\r\n\n");
-    printf(">> Start typing to see the echo on the screen \r\n\n");
 
     __enable_irq();
  
