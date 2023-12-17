@@ -60,8 +60,6 @@
 #define HTTP_CLIENT_TASK_STACK_SIZE        (5 * 1024)
 #define HTTP_CLIENT_TASK_PRIORITY          (1)
 
-#define DATA_ACQUISITION_TASK_STACK_SIZE        (5 * 1024)
-#define DATA_ACQUISITION_TASK_PRIORITY          (2)
 
 /*******************************************************************************
 * Global Variables
@@ -73,6 +71,11 @@ volatile int uxTopUsedPriority;
 TaskHandle_t client_task_handle;
 
 TaskHandle_t data_acquisition_task_handle;
+
+
+// uint8_t tx_buf[TX_BUF_SIZE];
+// size_t tx_length = TX_BUF_SIZE;
+// uint8_t variabel_kirim[TX_BUF_SIZE];
 
 /*******************************************************************************
 * Function Name: main
@@ -106,7 +109,7 @@ int main(void)
     __enable_irq();
 
     /* Initialize retarget-io to use the debug UART port. */
-	cy_retarget_io_init(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX, CY_RETARGET_IO_BAUDRATE);
+	cy_retarget_io_init(CYBSP_DEBUG_UART_TX, CYBSP_DEBUG_UART_RX,CY_RETARGET_IO_BAUDRATE);
 
 	/* \x1b[2J\x1b[;H - ANSI ESC sequence to clear screen. */
 	printf("\x1b[2J\x1b[;H");
@@ -116,7 +119,6 @@ int main(void)
 
 	/* Create the client task. */
 	xTaskCreate(http_client_task, "Network task", HTTP_CLIENT_TASK_STACK_SIZE, NULL, HTTP_CLIENT_TASK_PRIORITY, &client_task_handle);
-	xTaskCreate(data_acquisition_task, "Data Acquisition task", DATA_ACQUISITION_TASK_STACK_SIZE, NULL, DATA_ACQUISITION_TASK_PRIORITY, &data_acquisition_task_handle);
 
 	/* Start the FreeRTOS scheduler. */
 	vTaskStartScheduler();
