@@ -1,45 +1,9 @@
+#include <stdlib.h>
 #include "cyhal.h"
 #include "cybsp.h"
 #include "cy_retarget_io.h"
 #include "data_acquisition.h"
 
-#define RX_BUF_SIZE     4
-#define TX_BUF_SIZE     4
-/*******************************************************************************
-* Function Name: handle_error
-********************************************************************************
-* Summary:
-* User defined error handling function.
-*
-* Parameters:
-*  void
-*
-* Return:
-*  void
-*
-*******************************************************************************/
-void handle_error(void)
-{
-     /* Disable all interrupts. */
-    __disable_irq();
-
-    CY_ASSERT(0);
-}
-
-/*******************************************************************************
-* Function Name: main
-********************************************************************************
-* Summary:
-* This is the main function.
-* Reads one byte from the serial terminal and echoes back the read byte.
-*
-* Parameters:
-*  void
-*
-* Return:
-*  int
-*
-*******************************************************************************/
 /*******************************************************************************
  * Function Name: data_acquisition_task
  *******************************************************************************
@@ -54,7 +18,9 @@ void handle_error(void)
  *
  *******************************************************************************/
 
-void data_acquisition_task(void *arg)
+//uint8_t data_acquisition_task(void *arg)
+//uint8_t* data_acquisition_task(void *arg)
+uint8_t* data_acquisition_task()
 {
     cyhal_uart_t uart_obj;
     uint32_t     actualbaud;
@@ -70,73 +36,53 @@ void data_acquisition_task(void *arg)
         .rx_buffer_size = RX_BUF_SIZE
     };
 
-    cy_rslt_t result;
-    #if defined(CY_DEVICE_SECURE)
-        cyhal_wdt_t wdt_obj;
-        /* Clear watchdog timer so that it doesn't trigger a reset */
-        result = cyhal_wdt_init(&wdt_obj, cyhal_wdt_get_max_timeout_ms());
-        CY_ASSERT(CY_RSLT_SUCCESS == result);
-        cyhal_wdt_free(&wdt_obj);
-    #endif
-
     uint8_t read_data; /* Variable to store the received character
                         * through terminal */
 
-    /* Initialize the device and board peripherals */
-    result = cybsp_init();
-    if (result != CY_RSLT_SUCCESS)
-    {
-        handle_error();
-    }
-
-    /* Initialize retarget-io to use the debug UART port */
-
-/*
-    result = cy_retarget_io_init_fc(CYBSP_DEBUG_UART_TX,
-                                    CYBSP_DEBUG_UART_RX,
-                                    CYBSP_DEBUG_UART_CTS,
-                                    CYBSP_DEBUG_UART_RTS,
-                                    CY_RETARGET_IO_BAUDRATE);
-*/
     // Initialize the UART Block
-    result = cyhal_uart_init(&uart_obj, P12_1, P12_0, NC, NC, NULL,
+    cyhal_uart_init(&uart_obj, P12_1, P12_0, NC, NC, NULL,
                            &uart_config);
 
-    if (result != CY_RSLT_SUCCESS)
-    {
-        handle_error();
-    }
-
     // Set the baud rate
-    result = cyhal_uart_set_baud(&uart_obj, 115200, &actualbaud);
-
-
-    /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
-//    printf("\x1b[2J\x1b[;H");
-
-//    printf("***********************************************************\r\n");
-//    printf("HAL: UART Transmit and Receive\r\n");
-//    printf("***********************************************************\r\n\n");
-//    printf(">> Start typing to see the echo on the screen \r\n\n");
+    cyhal_uart_set_baud(&uart_obj, 115200, &actualbaud);
 
     __enable_irq();
+//    uint8_t data_barcode[13];
+    uint8_t* data_barcode = malloc(TX_BUF_SIZE * sizeof(uint8_t));
 
-    for (;;)
+    if (data_barcode == NULL)
     {
-        if (CY_RSLT_SUCCESS == cyhal_uart_getc(&uart_obj,
-                                               &read_data, 0))
-        {
-            if (CY_RSLT_SUCCESS != cyhal_uart_putc(&uart_obj,
-                                                   read_data))
-            {
-                handle_error();
-            }
-        }
-        else
-        {
-            handle_error();
-        }
+        // Handle memory allocation failure
+        // For example, print an error message and return NULL
+//        printf("Memory allocation failed!");
+        return NULL;
     }
+
+//    int i=0;
+    	// for(;;) menyebabkan infinite loop sehingga return tidak bisa tercapai
+//    for (;;)
+//    {
+//    while(true)
+//    {
+//
+//    }
+    for (size_t i = 0;i<TX_BUF_SIZE;i++)
+    {
+    	if (CY_RSLT_SUCCESS == cyhal_uart_getc(&uart_obj,
+    											   &read_data, 0))
+		{
+			data_barcode[i]=read_data;
+//			i++;
+//			if (i == 12)
+//			{
+//				i = 0;
+//			}
+		}
+    }
+//    }
+//    return (uint8_t)data_barcode;
+//    return 0;
+    return data_barcode;
 }
 
 /* [] END OF FILE */
