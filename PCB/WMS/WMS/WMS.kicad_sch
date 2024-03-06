@@ -6,8 +6,8 @@
 
   (title_block
     (title "WMS Scanner")
-    (date "2024-02-28")
-    (rev "1.4")
+    (date "2024-03-05")
+    (rev "1.5")
     (company "Institut Teknologi Bandung")
     (comment 1 "Bostang Palaguna")
     (comment 2 "Designed By:")

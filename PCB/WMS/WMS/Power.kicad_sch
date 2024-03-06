@@ -6,8 +6,8 @@
 
   (title_block
     (title "Subsistem Power")
-    (date "2024-02-28")
-    (rev "1.4")
+    (date "2024-03-05")
+    (rev "1.5")
     (company "Institut Teknologi Bandung")
     (comment 1 "Bostang Palaguna")
     (comment 2 "Designed By:")
@@ -275,6 +275,7 @@
       )
     )
   )
+
 
   (junction (at 25.4 30.48) (diameter 0) (color 0 0 0 0)
     (uuid 5ff4cdba-5b06-45c0-a9ca-a200e56820d9)
@@ -685,8 +686,8 @@
     (property "Datasheet" "~" (at 118.11 21.336 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid bbd7d97a-620d-4a6c-a80b-fd96a503734c))
     (pin "1" (uuid 12069fc1-5083-4a03-a67d-2dd42844b827))
+    (pin "2" (uuid bbd7d97a-620d-4a6c-a80b-fd96a503734c))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/af8a6982-59d0-46e9-a893-abe7f75d8b5d/aa8e60b3-f72f-4cc0-913f-dd4c974e64ed"
@@ -705,18 +706,18 @@
     (property "Value" "~" (at 106.68 41.91 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "WMS_components:YX850" (at 106.68 41.91 0)
+    (property "Footprint" "WMS_components:YX850_v2" (at 106.68 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 106.68 41.91 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid ff80cd23-780a-4c54-a0f4-12ef324dac3c))
+    (pin "2" (uuid 16eafb61-8507-415e-9230-1877ad1fda92))
     (pin "3" (uuid 49229a9a-dfcf-4c0f-a62f-75b1a42a89f0))
-    (pin "6" (uuid 7f9019e5-384a-4a5b-ad9f-7d59996eeba7))
     (pin "4" (uuid ad9a0322-f2d9-4a66-b590-e94b276713b0))
     (pin "5" (uuid 61034bd4-0f5f-4eef-8d16-11b648ac57f7))
-    (pin "2" (uuid 16eafb61-8507-415e-9230-1877ad1fda92))
+    (pin "6" (uuid 7f9019e5-384a-4a5b-ad9f-7d59996eeba7))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/af8a6982-59d0-46e9-a893-abe7f75d8b5d/aa8e60b3-f72f-4cc0-913f-dd4c974e64ed"
@@ -760,18 +761,18 @@
     (property "Value" "~" (at 36.83 25.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "WMS_components:TP4056-18650" (at 36.83 25.4 0)
+    (property "Footprint" "WMS_components:TP4056-18650_v2" (at 36.83 25.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 36.83 25.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "4" (uuid b395e9f1-3aea-4312-81ff-d18a75ee639c))
     (pin "1" (uuid c959a311-1332-425f-bbfa-c7c4b3551170))
+    (pin "2" (uuid bbb25ca0-74f9-4a67-821f-58ab3b6f5332))
+    (pin "3" (uuid eff50866-c611-4d84-bedc-a3e957fbf0b1))
+    (pin "4" (uuid b395e9f1-3aea-4312-81ff-d18a75ee639c))
     (pin "5" (uuid 9618c72f-e5bf-457b-9bb9-f246bbd74514))
     (pin "6" (uuid 89af0e82-ac5d-458e-91cc-fa557883014b))
-    (pin "3" (uuid eff50866-c611-4d84-bedc-a3e957fbf0b1))
-    (pin "2" (uuid bbb25ca0-74f9-4a67-821f-58ab3b6f5332))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/af8a6982-59d0-46e9-a893-abe7f75d8b5d/aa8e60b3-f72f-4cc0-913f-dd4c974e64ed"
@@ -790,16 +791,16 @@
     (property "Value" "~" (at 87.63 24.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Footprint" "WMS_components:MT3608_module" (at 87.63 24.13 0)
+    (property "Footprint" "WMS_components:MT3608_module_v2" (at 87.63 24.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 87.63 24.13 0)
       (effects (font (size 1.27 1.27)) hide)
     )
+    (pin "1" (uuid 81c7df91-9c24-4127-9b7d-68e906a9af14))
+    (pin "2" (uuid ecb4162e-91e3-4358-b874-28eff098a115))
     (pin "3" (uuid 60f84bb8-c9d0-442d-9865-188f2cffa53c))
     (pin "4" (uuid 0398fd1c-4857-4254-bdca-984d3f6e0701))
-    (pin "2" (uuid ecb4162e-91e3-4358-b874-28eff098a115))
-    (pin "1" (uuid 81c7df91-9c24-4127-9b7d-68e906a9af14))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/af8a6982-59d0-46e9-a893-abe7f75d8b5d/aa8e60b3-f72f-4cc0-913f-dd4c974e64ed"

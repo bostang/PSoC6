@@ -6,8 +6,8 @@
 
   (title_block
     (title "Data Acquisition, Display(PCB 2)")
-    (date "2024-02-28")
-    (rev "1.4")
+    (date "2024-03-05")
+    (rev "1.5")
     (company "Institut Teknologi Bandung")
     (comment 1 "Bostang Palaguna")
     (comment 2 "Designed By:")
@@ -261,6 +261,7 @@
       )
     )
   )
+
 
 
   (wire (pts (xy 110.49 33.02) (xy 113.03 33.02))
@@ -901,18 +902,18 @@
     (property "Datasheet" "~" (at 53.34 81.28 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "5" (uuid a4855459-bccc-49c2-94c9-a2b3716586fc))
-    (pin "12" (uuid 7ae64f52-7d23-4aba-8a5c-9c841082b121))
-    (pin "11" (uuid 4bb37b76-f49a-4553-a77e-0cca93f43e34))
-    (pin "7" (uuid cdf372aa-2a5e-4bf8-88a4-9c2016ba1907))
     (pin "1" (uuid 624ee85e-191c-4bca-9421-56015620b3f2))
-    (pin "2" (uuid a628deae-b9fa-43fe-9558-14566a6ada2b))
     (pin "10" (uuid 0bae1ddc-4adb-4062-a759-6000814ee23f))
-    (pin "8" (uuid d59261fb-969e-449b-b07d-ffbd18102586))
-    (pin "6" (uuid 8698f1eb-e134-496b-8f11-3433b0af420b))
-    (pin "9" (uuid dde99848-a524-43e1-b2a4-3124976491c7))
-    (pin "4" (uuid 7e003e2c-2b9e-484a-bffd-da1b227d44c4))
+    (pin "11" (uuid 4bb37b76-f49a-4553-a77e-0cca93f43e34))
+    (pin "12" (uuid 7ae64f52-7d23-4aba-8a5c-9c841082b121))
+    (pin "2" (uuid a628deae-b9fa-43fe-9558-14566a6ada2b))
     (pin "3" (uuid 1368c548-80b3-448b-abe0-147c63259658))
+    (pin "4" (uuid 7e003e2c-2b9e-484a-bffd-da1b227d44c4))
+    (pin "5" (uuid a4855459-bccc-49c2-94c9-a2b3716586fc))
+    (pin "6" (uuid 8698f1eb-e134-496b-8f11-3433b0af420b))
+    (pin "7" (uuid cdf372aa-2a5e-4bf8-88a4-9c2016ba1907))
+    (pin "8" (uuid d59261fb-969e-449b-b07d-ffbd18102586))
+    (pin "9" (uuid dde99848-a524-43e1-b2a4-3124976491c7))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/9fb543db-14d8-4eb4-8389-8a0227f2b73a"

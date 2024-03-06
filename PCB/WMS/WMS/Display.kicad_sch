@@ -6,8 +6,8 @@
 
   (title_block
     (title "Subsistem Display")
-    (date "2024-02-28")
-    (rev "1.4")
+    (date "2024-03-05")
+    (rev "1.5")
     (company "Institut Teknologi Bandung")
     (comment 1 "Bostang Palaguna")
     (comment 2 "Designed By:")
@@ -249,6 +249,7 @@
   )
 
 
+
   (wire (pts (xy 45.72 50.8) (xy 53.34 50.8))
     (stroke (width 0) (type default))
     (uuid 0948cfbc-6e78-4fa9-b349-f5a697430bbb)
@@ -447,8 +448,8 @@
     (property "Datasheet" "~" (at 76.2 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid 267d33bb-cf7f-4e5e-a4f7-46565b337590))
     (pin "1" (uuid ef8eb4fa-450a-40b3-af83-28ff116db768))
+    (pin "2" (uuid 267d33bb-cf7f-4e5e-a4f7-46565b337590))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/9fb543db-14d8-4eb4-8389-8a0227f2b73a/edc6374f-fc1a-46a7-a9d2-3d194e821317"
@@ -467,16 +468,16 @@
     (property "Value" "SSD1306" (at 81.28 34.29 90)
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
-    (property "Footprint" "WMS_components:128x64OLED" (at 67.31 33.02 0)
+    (property "Footprint" "WMS_components:128x64OLED_v2" (at 67.31 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "" (at 67.31 33.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "4" (uuid 32eca17f-cce7-440e-9767-ef5f6fc901bd))
-    (pin "3" (uuid b60c2be4-8a39-43ca-881c-264c4cbbaef0))
-    (pin "2" (uuid a724c44e-8237-47ba-bc21-69b370272541))
     (pin "1" (uuid b234737d-d125-45d3-984b-1db33de3fe61))
+    (pin "2" (uuid a724c44e-8237-47ba-bc21-69b370272541))
+    (pin "3" (uuid b60c2be4-8a39-43ca-881c-264c4cbbaef0))
+    (pin "4" (uuid 32eca17f-cce7-440e-9767-ef5f6fc901bd))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/9fb543db-14d8-4eb4-8389-8a0227f2b73a/edc6374f-fc1a-46a7-a9d2-3d194e821317"
@@ -501,8 +502,8 @@
     (property "Datasheet" "~" (at 76.2 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid aa573a7f-b767-4a24-ab18-a9b131b72c92))
     (pin "1" (uuid 9491d2bc-5d7c-4548-83dc-93c6920ad32d))
+    (pin "2" (uuid aa573a7f-b767-4a24-ab18-a9b131b72c92))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/9fb543db-14d8-4eb4-8389-8a0227f2b73a/edc6374f-fc1a-46a7-a9d2-3d194e821317"
@@ -527,8 +528,8 @@
     (property "Datasheet" "~" (at 83.82 46.99 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid 57b773bc-46ff-404a-82e6-c0af4061ae9d))
     (pin "1" (uuid 1a59df72-4a36-4b0e-bdd3-65833499ebc3))
+    (pin "2" (uuid 57b773bc-46ff-404a-82e6-c0af4061ae9d))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/9fb543db-14d8-4eb4-8389-8a0227f2b73a/edc6374f-fc1a-46a7-a9d2-3d194e821317"
@@ -553,8 +554,8 @@
     (property "Datasheet" "~" (at 83.82 55.88 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "2" (uuid 2694b526-4abd-4bb0-a0cb-ed13e60e1d17))
     (pin "1" (uuid 563e0f92-2a16-4e7c-b459-449d4e345ec2))
+    (pin "2" (uuid 2694b526-4abd-4bb0-a0cb-ed13e60e1d17))
     (instances
       (project "WMS"
         (path "/27842b89-d3ad-4f43-9134-f95cd8633a64/9fb543db-14d8-4eb4-8389-8a0227f2b73a/edc6374f-fc1a-46a7-a9d2-3d194e821317"
