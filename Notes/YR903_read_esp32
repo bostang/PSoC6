@@ -1,0 +1,118 @@
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#define rx2 16
+#define tx2 17
+
+void IRAM_ATTR isr();
+
+// COMMAND
+const byte cmd_init[] = {0xA0, 0x03, 0x01, 0x79, 0xE5};
+const byte cmd_reset[] = {0xA0, 0x03, 0x01, 0x70, 0xEC};
+const byte cmd_startRead[] = {0xA0, 0x04, 0x01, 0x89, 0x01, 0xD1};
+
+const byte header[] = {0xA0};
+
+#define READ_MODE 0
+#define STOP_MODE 1
+
+#define button GPIO_NUM_18
+#define led GPIO_NUM_2
+#define DEBOUNCE_DURATION 300
+
+// inisiasi variabel
+int mode = STOP_MODE;
+volatile bool gpio_intr_flag = false;
+
+volatile int flag_temu_header = 0; // menandakan bahwa tag 0xA0 telah terdeteksi
+
+void setup() {
+  // put your setup code here, to run once:
+  // konfigurasi komunikasi serial dari ESP32 ke Serial Monitor
+  Serial.begin(115200);
+
+  // konfigurasi komunikasi serial antara ESP32 dengan modul RFID
+  Serial2.begin(115200, SERIAL_8N1, rx2, tx2);
+
+  pinMode(button, INPUT);
+  pinMode(led, OUTPUT);
+
+  attachInterrupt(button, isr, RISING);
+  xTaskCreatePinnedToCore(buttonTask, "Button Task", 2048, NULL, 1, NULL, 0);
+
+}
+
+void buttonTask(void* pvParameters)
+{
+     (void)pvParameters;
+  while (1) {
+  if (mode == READ_MODE)
+  {
+    digitalWrite(led,HIGH);
+    // Serial2.write(cmd_startRead, sizeof(cmd_startRead));
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+    // // kirim perintah untuk stop baca tag
+    // digitalWrite(led,LOW);
+    // Serial2.write(cmd_stopRead, sizeof(cmd_stopRead));
+  }
+    vTaskDelay(1);
+  }
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+if (true == gpio_intr_flag)
+  {
+    gpio_intr_flag = false;
+    // debouncing
+    static unsigned long last_interrupt_time = 0;
+    unsigned long interrupt_time = millis();
+
+    if (interrupt_time - last_interrupt_time > DEBOUNCE_DURATION)
+    {
+      // jika sedang mode baca dan belum selesai satu siklus, maka lanjut ke mode tampil
+      // Serial.print(countButtonPressed);
+      // countButtonPressed++;
+      if (mode == READ_MODE)
+      {
+        mode = STOP_MODE;
+        // Inisiasi RFID reader
+        // Serial2.write(cmd_init, sizeof(cmd_init));
+        Serial.println("STATE 1");
+      }
+      else
+      {
+        mode = READ_MODE;
+        // Serial.println(". getting in STOP_MODE");
+        Serial.println("STATE 2");
+        // Serial2.write(cmd_reset, sizeof(cmd_reset));
+        Serial2.write(cmd_startRead, sizeof(cmd_startRead));
+        while (Serial2.available())
+        {
+
+          // Serial2.write(cmd_startRead, sizeof(cmd_startRead));
+          // Serial.print("0x");
+          // mendeteksi header 0xA0
+          if (Serial2.find(header, 1)) // syntax : Serial2.find(target, length)
+          {
+            flag_temu_header = 1;
+          }
+          if (flag_temu_header)
+          {
+            Serial.print(Serial2.read(),HEX);
+            Serial.print(" ");
+          }
+        }
+        flag_temu_header = 0;
+        Serial.println("");
+      }
+    }
+    last_interrupt_time = interrupt_time;
+  }
+}
+void IRAM_ATTR isr()
+{
+  gpio_intr_flag = true;
+}
