@@ -1,3 +1,6 @@
+// 2024-03-14 06.38 pagi
+    // dari versi 3, dibuat menjadi sebuah fungsi (NOT YET)
+
 // jumat, 15 maret 2024 06.24 pagi
     // proses dari awal (kirim perintah ke rfid reader) sampai konversi hasil byte bacaan
     // ke array of string (SUKSES)
