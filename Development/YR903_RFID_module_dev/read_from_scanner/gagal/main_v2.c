@@ -8,8 +8,7 @@
 #define BAUD_RATE       115200
 #define UART_DELAY      10u
 //#define UART_DELAY      1300u
-//#define RX_BUF_SIZE     48
-#define RX_BUF_SIZE     6
+#define RX_BUF_SIZE     48
 #define TX_BUF_SIZE     6
 
 /*******************************************************************************
@@ -76,6 +75,9 @@ int main(void)
 	        cyhal_wdt_free(&wdt_obj);
 	    #endif
 
+	    uint8_t read_data; /* Variable to store the received character
+	                        * through terminal */
+
 	    /* Initialize the device and board peripherals */
 	    result = cybsp_init();
 	    if (result != CY_RSLT_SUCCESS)
@@ -97,9 +99,9 @@ int main(void)
 	    }
 
 	    /* \x1b[2J\x1b[;H - ANSI ESC sequence for clear screen */
-//	    printf("\x1b[2J\x1b[;H");
-//	    printf("Baca data dari RFID module ke PSoC\r\n");
-//	    printf("***********************************************************\r\n");
+	    printf("\x1b[2J\x1b[;H");
+
+	    printf("***********************************************************\r\n");
 
     /* Initialize the UART Blocks */
     rslt = cyhal_uart_init(&uart_rfid, P12_1, P12_0, NC, NC, NULL, &uart_rfid_config);
@@ -112,24 +114,31 @@ int main(void)
     /* Begin Tx Transfer */
     // Send the command to start reading from the RFID scanner
     cyhal_uart_write(&uart_rfid, (void*)tx_buf, &tx_length);
+//    cyhal_system_delay_ms(UART_DELAY);
+
 
     /* Begin Rx Transfer */
     // Read the response data from the RFID scanner
+    cyhal_uart_read(&uart_rfid, (void*)rx_buf, &rx_length);
+    cyhal_system_delay_ms(UART_DELAY);
+//    printf("")
+//
+    // Print the received data from the RFID reader
+    printf("Received data from RFID reader: \r\n");
+    for (size_t i = 0; i < rx_length; i++) {
+        printf("%02X\r\n", rx_buf[i]); // Assuming you want to print in hexadecimal format
+    }
+    printf("\r\n");
+//
+//    // Send the read data to the USB-TTL
+//    cyhal_uart_write(&uart_usb, (void*)rx_buf, &rx_length);
+//    cyhal_system_delay_ms(UART_DELAY);
+//
+    // ...
+
     for (;;)
     {
-
-		if (CY_RSLT_SUCCESS == cyhal_uart_getc(&uart_rfid,
-    	                                               &rx_buf, 0))
-		{
-				if (CY_RSLT_SUCCESS != cyhal_uart_write(&uart_usb, (void*)rx_buf, &rx_length))
-				{
-					handle_error();
-				}
-    	        }
-    	        else
-    	        {
-    	            handle_error();
-    	        }
+        // Application loop
     }
 }
 ///* [] END OF FILE */
