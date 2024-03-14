@@ -9,7 +9,8 @@
 #define UART_DELAY      10u
 //#define UART_DELAY      1300u
 //#define RX_BUF_SIZE     48
-#define RX_BUF_SIZE     6
+// #define RX_BUF_SIZE     6
+#define RX_BUF_SIZE     1 // baca karakter per karakter
 #define TX_BUF_SIZE     6
 
 /*******************************************************************************
@@ -121,15 +122,15 @@ int main(void)
 		if (CY_RSLT_SUCCESS == cyhal_uart_getc(&uart_rfid,
     	                                               &rx_buf, 0))
 		{
-				if (CY_RSLT_SUCCESS != cyhal_uart_write(&uart_usb, (void*)rx_buf, &rx_length))
-				{
-					handle_error();
-				}
-    	        }
-    	        else
-    	        {
-    	            handle_error();
-    	        }
+            if (CY_RSLT_SUCCESS != cyhal_uart_write(&uart_usb, (void*)rx_buf, &rx_length))
+            {
+                handle_error();
+            }
+        }
+        else
+        {
+            handle_error();
+        }
     }
 }
 ///* [] END OF FILE */
