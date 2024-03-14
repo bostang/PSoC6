@@ -1,0 +1,36 @@
+Sub-systems
+--------------------
+1. Power Subsystem
+2. Display Subsystem
+3. Data Processing & Gateway Subsystem
+4. Data Acquisition Subsystem
+
+Components list
+-----------------------
+1. GM67 Barcode Scanner
+2. YR903 RFID Scanner
+3. MT3608 DC Boost Converter
+4. TP4056 Charging Module
+5. Lithium 18650 Battery
+6. Buzzer
+7. LED (x2)
+8. Quad SPI Flash & MicroSD reader
+9. Push Button (x2)
+10. Switch (x2)
+11. OLED 128x64 display
+
+Pin Connections w/ PSoC
+---------------------------------
+RFID:
+   - Tx	<->	P12_1
+   - Rx 	<->	P12_0
+Barcode:
+   - Tx	<->	P9_1
+   - Rx 	<->	P9_0
+LED:
+   - G	<->	P9_2
+   - R	<->	P9_4
+OLED:
+   - SDA	<->	P6_1
+   - SCL	<->	P6_0
+Buzzer	<->	P12_3

@@ -1,4 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "WMS_components")(type "KiCad")(uri "${KIPRJMOD}/WMS_components.kicad_sym")(options "")(descr ""))
-)
