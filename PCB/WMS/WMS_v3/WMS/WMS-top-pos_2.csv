@@ -1,0 +1,23 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+BT1,Battery,BatteryHolder_Keystone_1042_1x18650,115.737,-64.7446,0,top
+R1,82,R_0805_2012Metric,167.2825,-50.2158,0,top
+R2,120,R_0805_2012Metric,158.9043,-50.1142,0,top
+R3,10k,R_0805_2012Metric,192.9638,-109.6029,90,top
+R4,10k,R_0805_2012Metric,182.5498,-97.4325,90,top
+R5,10k,R_0805_2012Metric,208.2546,-97.3817,90,top
+U1,~,YR903_RFID_Scanner_FPC_v2,203.6761,-65.83,90,top
+U4,~,JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,180.721,-66.04,180,top
+D1,,LED_THT:LED_D3.0mm,180.721,-66.04,180,Bottom
+D2,,LED_THT:LED_D3.0mm,180.721,-66.04,180,Bottom
+BZ1,,Buzzer_Beeper:Buzzer_12x9.5RM7.6,180.721,-66.04,180,Bottom
+Brd1,,PM2.54-1*4,180.721,-66.04,180,Bottom
+J1,,Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical,180.721,-66.04,180,top
+J2,,Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical,180.721,-66.04,180,top
+J3,,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,180.721,-66.04,180,top
+SW6,,TS-1002S-10526C,180.721,-66.04,180,Bottom
+SW1,,PTS125SJK73-2LFS,180.721,-66.04,180,Bottom
+U5,,PZ254-1-18-W-8.5,180.721,-66.04,180,top
+U7,,2.54-1*40,180.721,-66.04,180,top
+U6,,2.54-1*40,180.721,-66.04,180,top
+SW2,,PTS125SJK73-2LFS,180.721,-66.04,180,Bottom
+SW3,,PTS125SJK73-2LFS,180.721,-66.04,180,Bottom

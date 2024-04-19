@@ -1,0 +1,30 @@
+### Footprint positions - created on Fri Mar 15 15:59:31 2024 ###
+### Printed by KiCad version (7.99.0-200-gad838e3d73)
+## Unit = mm, Angle = deg.
+## Side : top
+# Ref     Val                Package                                                PosX       PosY       Rot  Side
+BT1       Battery            BatteryHolder_Keystone_1042_1x18650                115.7370   -64.7446    0.0000  top
+BZ1       Buzzer             PUIAudio_SMT_0825_S_4_R                            120.6500   -93.2434    0.0000  top
+Brd1      SSD1306            128x64OLED_v2                                      168.9862   -91.1352    0.0000  top
+D1        LED                LED_D3.0mm                                         180.9446   -97.8916    0.0000  top
+D2        LED                LED_D3.0mm                                         171.4500   -97.4852    0.0000  top
+J1        Conn_01x40_Socket  PinHeader_1x40_P2.54mm_Vertical                     75.1840   -77.9780   90.0000  top
+J2        Conn_01x40_Socket  PinHeader_1x40_P2.54mm_Vertical                     75.1840  -108.4580   90.0000  top
+J3        Conn_01x03_Socket  PinHeader_1x03_P2.54mm_Vertical                    184.4040  -108.4580  -90.0000  top
+R1        150                R_0805_2012Metric                                  177.9035   -97.8916    0.0000  top
+R2        150                R_0805_2012Metric                                  167.9975   -97.4852    0.0000  top
+R3        10k                R_0805_2012Metric                                  200.3317  -106.2228  180.0000  top
+R4        10k                R_0805_2012Metric                                  198.4737   -90.9066    0.0000  top
+R5        10k                R_0805_2012Metric                                  197.5866   -82.3741   90.0000  top
+SW1       SW_Push_Open       SW_PUSH-12mm                                       188.7220   -96.3060    0.0000  top
+SW2       SW_Push_Open       SW_PUSH_6mm_H9.5mm                                 188.5200   -86.3960    0.0000  top
+SW3       SW_Push_Open       SW_PUSH_6mm_H9.5mm                                 188.5200   -78.7760    0.0000  top
+SW4       SW_SPDT            PinHeader_1x03_P2.54mm_Vertical                    110.4900   -90.1700  -90.0000  top
+SW5       SW_Push_DPDT       SW_CuK_JS202011AQN_DPDT_Angled                     105.8964   -94.8964    0.0000  top
+U1        ~                  YR903_RFID_Scanner_FPC                             184.1500   -66.0400   90.0000  top
+U2        ~                  TP4056-18650_v2                                     73.2300   -84.6600    0.0000  top
+U3        ~                  MT3608_module_v2                                   146.0200   -93.1660    0.0000  top
+U4        ~                  JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal   179.5720   -89.1840    0.0000  top
+U5        ~                  Quad_SPI_flash_microSD_v2                          105.6640  -112.0140   90.0000  top
+U6        ~                  CY8CPROTO-062-4343W_v3                             124.7400   -92.3290   90.0000  top
+## End

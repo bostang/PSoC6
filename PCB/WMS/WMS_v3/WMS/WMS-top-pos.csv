@@ -1,0 +1,9 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+BT1,Battery,BatteryHolder_Keystone_1042_1x18650,115.737,-64.7446,0,top
+R1,82,R_0805_2012Metric,167.2825,-50.2158,0,top
+R2,120,R_0805_2012Metric,158.9043,-50.1142,0,top
+R3,10k,R_0805_2012Metric,192.9638,-109.6029,90,top
+R4,10k,R_0805_2012Metric,182.5498,-97.4325,90,top
+R5,10k,R_0805_2012Metric,208.2546,-97.3817,90,top
+U1,~,YR903_RFID_Scanner_FPC_v2,203.6761,-65.83,90,top
+U4,~,JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,180.721,-66.04,180,top

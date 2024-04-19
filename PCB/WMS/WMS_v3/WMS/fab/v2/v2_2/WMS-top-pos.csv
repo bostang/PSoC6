@@ -1,0 +1,25 @@
+Designator,Val,Package,Mid X,Mid Y,Rotation,Layer
+BT1,Battery,BatteryHolder_Keystone_1042_1x18650,115.737,-64.7446,0,top
+BZ1,Buzzer,PUIAudio_SMT_0825_S_4_R,120.65,-93.2434,0,top
+Brd1,SSD1306,128x64OLED_v2,168.9862,-91.1352,0,top
+D1,LED,LED_D3.0mm,180.9446,-97.8916,0,top
+D2,LED,LED_D3.0mm,171.45,-97.4852,0,top
+J1,Conn_01x40_Socket,PinHeader_1x40_P2.54mm_Vertical,75.184,-77.978,90,top
+J2,Conn_01x40_Socket,PinHeader_1x40_P2.54mm_Vertical,75.184,-108.458,90,top
+J3,Conn_01x03_Socket,PinHeader_1x03_P2.54mm_Vertical,184.404,-108.458,-90,top
+R1,150,R_0805_2012Metric,177.9035,-97.8916,0,top
+R2,150,R_0805_2012Metric,167.9975,-97.4852,0,top
+R3,10k,R_0805_2012Metric,200.3317,-106.2228,180,top
+R4,10k,R_0805_2012Metric,198.4737,-90.9066,0,top
+R5,10k,R_0805_2012Metric,197.5866,-82.3741,90,top
+SW1,SW_Push_Open,SW_PUSH-12mm,188.722,-96.306,0,top
+SW2,SW_Push_Open,SW_PUSH_6mm_H9.5mm,188.52,-86.396,0,top
+SW3,SW_Push_Open,SW_PUSH_6mm_H9.5mm,188.52,-78.776,0,top
+SW4,SW_SPDT,PinHeader_1x03_P2.54mm_Vertical,110.49,-90.17,-90,top
+SW5,SW_Push_DPDT,SW_CuK_JS202011AQN_DPDT_Angled,105.8964,-94.8964,0,top
+U1,~,YR903_RFID_Scanner_FPC,184.15,-66.04,90,top
+U2,~,TP4056-18650_v2,73.23,-84.66,0,top
+U3,~,MT3608_module_v2,146.02,-93.166,0,top
+U4,~,JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,179.572,-89.184,0,top
+U5,~,Quad_SPI_flash_microSD_v2,105.664,-112.014,90,top
+U6,~,CY8CPROTO-062-4343W_v3,124.74,-92.329,90,top
