@@ -20,15 +20,14 @@
 #include "button.h"
 #include "utils.h"
 #include "led.h"
-//#include "fsm.h"
 #include "oled.h"
 #include "buzzer.h"
 
 #include "mtb_ssd1306.h"
 #include "GUI.h"
 
-//#include "barcode.h"
-//#include "rfid.h"
+#include "barcode.h"
+#include "rfid.h"
 
 #include "fsm.h"
 

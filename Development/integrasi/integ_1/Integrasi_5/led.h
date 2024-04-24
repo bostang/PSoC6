@@ -36,10 +36,6 @@ UBaseType_t __attribute__((used)) uxTopUsedPriority;
 /*******************************************************************************
 * Function Prototypes
 *******************************************************************************/
-//void red_led_task(void* arg);
-//void green_led_task(void* arg);
-//void red_led_task(int* state);
-//void green_led_task(int* state);
 void red_led_task(void *pvParameters);
 void green_led_task(void *pvParameters);
 
@@ -86,34 +82,6 @@ void red_led_task(void *pvParameters)
 
     for(;;)
     {
-//    	if ((*arg == STATE_SCAN) || (*arg == STATE_SEND))
-//        {
-//        	cyhal_gpio_write((cyhal_gpio_t)PIN_RED_LED, LED_ON);
-//        }
-//        else
-//        {
-//        	cyhal_gpio_write((cyhal_gpio_t)PIN_RED_LED, LED_OFF);
-//        }
-//        vTaskDelay(50);
-//    	if (true == gpio_intr_flag_acq)
-//		{
-//    		if (state == STATE_IDLE)
-//    		{
-//    			cyhal_gpio_write((cyhal_gpio_t)PIN_RED_LED, LED_OFF);
-//    		}
-//    		else if (state == STATE_SCAN)
-//    		{
-//    			cyhal_gpio_write((cyhal_gpio_t)PIN_RED_LED, LED_ON);
-//    		}
-//    		else if (state == STATE_DISPLAY)
-//    		{
-//    			cyhal_gpio_write((cyhal_gpio_t)PIN_RED_LED, LED_OFF);
-//    		}
-//    		else if (state == STATE_SEND)
-//    		{
-//    			cyhal_gpio_write((cyhal_gpio_t)PIN_RED_LED, LED_ON);
-//    		}
-//		}
     	if ((*state == STATE_SCAN) || (*state == STATE_SEND))
         {
         	cyhal_gpio_write((cyhal_gpio_t)PIN_RED_LED, LED_ON);

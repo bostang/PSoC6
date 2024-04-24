@@ -8,7 +8,6 @@
 /*******************************************************************************
 * Header Files
 *******************************************************************************/
-//#include "fsm.h"
 #include "cybsp.h"
 #include "mtb_ssd1306.h"
 #include "GUI.h"
@@ -21,16 +20,14 @@
 
 #include "cyabs_rtos.h"
 
-#include "rfid.h"
-
 /*******************************************************************************
 * Macros
 ********************************************************************************/
 #define OLED_TASK_NAME         ("OLED Task")
 #define OLED_TASK_NAME         ("OLED Task")
 #define OLED_TASK_STACK_SIZE   (1024)
-//#define OLED_TASK_PRIORITY     (5)
-#define OLED_TASK_PRIORITY     (4)		// diturunkan prioritasnya untuk dilihat apakah akan mengalah masalah mutex dengan rfid_task
+#define OLED_TASK_PRIORITY     (5)
+//#define OLED_TASK_PRIORITY     (4)		// diturunkan prioritasnya untuk dilihat apakah akan mengalah masalah mutex dengan rfid_task
 
 #define OLED_HOR		(128)
 #define OLED_VER		(64)
@@ -40,19 +37,16 @@
 const GUI_FONT * OldFont;
 
 #define len_epc 12
-//const char* epc_test[len_epc]= {"A0", "04", "01", "89", "01", "D1", "A0", "04", "08", "89", "31", "D1"};
 
 /*******************************************************************************
 * Global Variables
 *******************************************************************************/
 bool flag_epc_displayed = 0;// menyatakan apakah tag sudah ditampilkan pada OLED/belum
+bool flag_oled_display = 0; // agar state hanya tampil sekali -> di setiap state, kondisi pemeriksaan bergantian (if !flag.., if flag..)
 
 /*******************************************************************************
 * Function Prototypes
 *******************************************************************************/
-//void oled_task(void* arg);
-//void oled_task(void* state);
-//void oled_task(int* state);
 void oled_task(void *pvParameters);
 
 
@@ -73,8 +67,6 @@ void oled_task(void *pvParameters);
 *  void
 *
 *******************************************************************************/
-//void oled_task(void* state)
-//void oled_task(int* state)
 void oled_task(void *pvParameters)
 {
     TaskParameters *params = (TaskParameters *)pvParameters;
@@ -105,26 +97,41 @@ void oled_task(void *pvParameters)
 
 		for(;;)
 		{
-//			if (true == gpio_intr_flag_acq)
-//			{
-				// atur font
-//				OldFont = GUI_SetFont(&GUI_Font8x8_1); // Buffer old font; mengubah font
 
 				if (*state == STATE_IDLE)
 				{
-//					GUI_DispStringInRect("State IDLE", &rClient, GUI_TA_HCENTER | GUI_TA_VCENTER);
-//					GUI_DispString("State IDLE\n");
-//					GUI_DispHex(epc_test,len_epc);
-				    // Lock the mutex before accessing/modifying epc
-				    cy_rtos_mutex_get(&epc_mutex, CY_RTOS_NEVER_TIMEOUT);
+					if (!flag_oled_display)
+					{
+						GUI_GotoX(4);
+						GUI_DispString("State IDLE\n");
+						flag_oled_display = true;
+					}
+				}
+
+				else if (*state == STATE_SCAN)
+				{
+					if (flag_oled_display) // selang-seling
+					{
+						GUI_GotoX(4);
+						GUI_DispString("State SCAN\n");
+						flag_oled_display = false;
+					}
+				}
+				else if (*state == STATE_DISPLAY)
+				{
+					if (!flag_oled_display)
+					{
+						GUI_GotoX(4);
+						GUI_DispString("State DISPLAY\n");
+						flag_oled_display = true;
+					}
+
+					// menampilkan epc hasil scan rfid
 					if (!flag_epc_displayed) // menampilkan epc sekali
 					{
-//						GUI_SetTextAlign(GUI_TA_HCENTER | GUI_TA_VCENTER);
-//						GUI_SetTextAlign(GUI_TA_HCENTER);
 						GUI_GotoX(4);
 						for (int k = 0;k<len_epc;k++)
 						{
-//							GUI_DispString(epc_test[k]);
 							GUI_DispString(params->epc[k]);
 							if (k==5)
 							{
@@ -136,52 +143,18 @@ void oled_task(void *pvParameters)
 								GUI_DispString(" ");
 							}
 						}
+						GUI_DispString("\n");
 						flag_epc_displayed = true;
 					}
-					 // Unlock the mutex after done with epc
-					cy_rtos_mutex_set(&epc_mutex);
-
-				}
-
-				else if (*state == STATE_SCAN)
-				{
-//					GUI_DispStringInRect("State SCAN", &rClient, GUI_TA_HCENTER | GUI_TA_VCENTER);
-					GUI_DispString("State SCAN");
-					flag_epc_displayed = false;
-
-				}
-				else if (*state == STATE_DISPLAY)
-				{
-//					GUI_DispStringInRect("State DISPLAY", &rClient, GUI_TA_HCENTER | GUI_TA_VCENTER);
-					GUI_DispString("State DISPLAY");
-
-//					// menampilkan epc hasil scan rfid
-//					if (!flag_epc_displayed) // menampilkan epc sekali
-//					{
-////						GUI_SetTextAlign(GUI_TA_HCENTER | GUI_TA_VCENTER);
-////						GUI_SetTextAlign(GUI_TA_HCENTER);
-//						GUI_GotoX(4);
-//						for (int k = 0;k<len_epc;k++)
-//						{
-////							GUI_DispString(epc_test[k]);
-//							GUI_DispString(params->epc[k]);
-//							if (k==5)
-//							{
-//								GUI_DispString("\n");
-//								GUI_GotoX(4);
-//							}
-//							else
-//							{
-//								GUI_DispString(" ");
-//							}
-//						}
-//						flag_epc_displayed = true;
-//					}
 				}
 				else if (*state == STATE_SEND)
 				{
-//					GUI_DispStringInRect("State SEND", &rClient, GUI_TA_HCENTER | GUI_TA_VCENTER);
-					GUI_DispString("State SEND");
+					if (flag_oled_display)
+					{
+						GUI_GotoX(4);
+						GUI_DispString("State SEND\n");
+						flag_oled_display = false;
+					}
 				}
 				else
 				{

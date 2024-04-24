@@ -20,7 +20,6 @@
 #include "button.h"
 #include "utils.h"
 #include "led.h"
-//#include "fsm.h"
 #include "oled.h"
 #include "buzzer.h"
 
