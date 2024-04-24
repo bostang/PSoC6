@@ -33,7 +33,8 @@
 #define STATE_DISPLAY	(2)
 #define STATE_SEND		(4)
 
-#define len_epc 12
+//#define len_epc 14 // versi asli
+#define len_epc 12 // versi lama
 
 typedef struct
 {

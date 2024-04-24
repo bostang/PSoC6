@@ -7,6 +7,10 @@
 * Tanggal awal : 23 April 2024
 *******************************************************************************/
 
+// HEADER GUARD
+#ifndef DATA_ACQUISITION_H
+#define DATA_ACQUISITION_H
+
 /*******************************************************************************
 * Header Files
 *******************************************************************************/
@@ -21,7 +25,8 @@
 #define BAR_RX P9_0
 #define BAR_TX P9_1
 #define RX_BUF_SIZE     4
-#define TX_BUF_SIZE     14 // panjang tag = 14
+//#define TX_BUF_SIZE     14 // panjang tag = 14
+#define TX_BUF_SIZE     12 // panjang tag = 14 (OLD)
 
 /*******************************************************************************
 * Function Prototypes
@@ -111,4 +116,5 @@ uint8_t* data_acquisition_task()
     return data_barcode;
 }
 
+#endif // DATA_ACQUISITION_H
 /* [] END OF FILE */

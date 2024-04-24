@@ -20,6 +20,10 @@
 
 #include "cyabs_rtos.h"
 
+#include "data_acquisition.h"
+
+#include "utils.h"
+
 /*******************************************************************************
 * Macros
 ********************************************************************************/
@@ -36,13 +40,15 @@
 
 const GUI_FONT * OldFont;
 
-#define len_epc 12
-
 /*******************************************************************************
 * Global Variables
 *******************************************************************************/
-bool flag_epc_displayed = 0;// menyatakan apakah tag sudah ditampilkan pada OLED/belum
-bool flag_oled_display = 0; // agar state hanya tampil sekali -> di setiap state, kondisi pemeriksaan bergantian (if !flag.., if flag..)
+bool flag_epc_displayed = false;// menyatakan apakah tag sudah ditampilkan pada OLED/belum
+bool flag_oled_display = false; // agar state hanya tampil sekali -> di setiap state, kondisi pemeriksaan bergantian (if !flag.., if flag..)
+bool flag_epc_scanned = false; //menyatakan apakah sudah ada epc yang terbaca atau belum
+
+uint8_t* resultArray;
+
 
 /*******************************************************************************
 * Function Prototypes
@@ -110,11 +116,26 @@ void oled_task(void *pvParameters)
 
 				else if (*state == STATE_SCAN)
 				{
+					// menampilkan pada OLED
 					if (flag_oled_display) // selang-seling
 					{
 						GUI_GotoX(4);
 						GUI_DispString("State SCAN\n");
 						flag_oled_display = false;
+						*state = STATE_DISPLAY; // langsung pindah ke state display
+					}
+					// melakukan scanning dengan barcode
+					if (!flag_epc_scanned)
+					{
+
+						size_t tx_length = TX_BUF_SIZE;
+						resultArray = malloc(TX_BUF_SIZE * sizeof(uint8_t));
+
+						// melakukan scanning dengan barcode
+						resultArray = data_acquisition_task();
+						cyhal_uart_write(&cy_retarget_io_uart_obj, (void*)resultArray, &tx_length);
+						printf("\r\nEPC terdeteksi!\r\n");
+						flag_epc_scanned = true;
 					}
 				}
 				else if (*state == STATE_DISPLAY)
@@ -126,25 +147,93 @@ void oled_task(void *pvParameters)
 						flag_oled_display = true;
 					}
 
-					// menampilkan epc hasil scan rfid
-					if (!flag_epc_displayed) // menampilkan epc sekali
-					{
-						GUI_GotoX(4);
-						for (int k = 0;k<len_epc;k++)
+					// mengubah tag dari byte array menjadi array of string
+//					 int arrayLength = sizeof(params->epc) / sizeof(params->epc[0]); // Get the length of the array
+					 int arrayLength = sizeof(resultArray) / sizeof(resultArray[0]); // Get the length of the array
+
+					// Convert byte array to hexadecimal string array
+//						char** hexStringArray = byteArrayToHexStringArray(&resultArray, arrayLength);
+//					 char** hexStringArray = byteArrayToHexStringArray(resultArray, arrayLength);
+//					 char* hexStringArray = uint8ArrayToHexString(resultArray, arrayLength);
+//					    free(resultArray); // mebebaskan resultArray setelah dikonversi menjadi array of string
+
+//					 for (int k = 0;k<arrayLength;k++)
+//					 {
+//						 printf("%c",resultArray[k]);
+//					 }
+//					 printf("\r\n");
+
+					 // Convert to string
+					    char* stringBuffer = (char*)malloc(TX_BUF_SIZE + 1); // +1 for null-terminator
+					    if (stringBuffer == NULL)
+					    {
+					        printf("Failed to allocate memory.\n");
+					        return 1; // Return error code or handle allocation failure
+					    }
+
+					    // Copy each character from tx_buf to stringBuffer
+					    for (size_t i = 0; i < TX_BUF_SIZE; i++) {
+					        stringBuffer[i] = (char)resultArray[i];
+					    }
+					    stringBuffer[TX_BUF_SIZE] = '\0'; // Null-terminate the string
+
+					    for (int i = 0;i<TX_BUF_SIZE;i++)
+					    {
+					    	printf("%c",stringBuffer[i]);
+					    }
+					    printf("\r\n");
+
+
+
+
+					    // DEBUG : tampilkan array ke layar:
+//					    printf("%s\r\n",hexStringArray);
+//					    for (int i = 0; i < arrayLength; i++)
+//					    {
+//					        printf("%s", hexStringArray[i]);
+//					    }
+//					    printf("\r\n");
+
+						// menampilkan epc hasil scan rfid
+						if (!flag_epc_displayed) // menampilkan epc sekali
 						{
-							GUI_DispString(params->epc[k]);
-							if (k==5)
-							{
-								GUI_DispString("\n");
-								GUI_GotoX(4);
-							}
-							else
-							{
-								GUI_DispString(" ");
-							}
-						}
-						GUI_DispString("\n");
+							GUI_GotoX(4);
+//							GUI_DispString(hexStringArray);
+
+							for (int k = 0;k<TX_BUF_SIZE;k++)
+							 {
+//								 printf("%c",resultArray[k]);
+//								GUI_DispString(hexStringArray);
+								GUI_DispChar(stringBuffer[k]);
+
+							 }
+//							 printf("\r\n");
+//							GUI_DispString("\n");
+
+//							GUI_DispString(hexStringArray);
+//							for (int k = 0; k<arrayLength; k++)
+//							{
+//								GUI_DispString(hexStringArray[k]);
+//								GUI_DispString(" ");
+//							}
+							GUI_DispString("\n");
+
+//						for (int k = 0;k<len_epc;k++)
+//						{
+//							GUI_DispString(params->epc[k]);
+//							if (k==5)
+//							{
+//								GUI_DispString("\n");
+//								GUI_GotoX(4);
+//							}
+//							else
+//							{
+//								GUI_DispString(" ");
+//							}
+//						}
+//						GUI_DispString("\n");
 						flag_epc_displayed = true;
+						*state = STATE_SEND; // langsung pindah ke state display
 					}
 				}
 				else if (*state == STATE_SEND)

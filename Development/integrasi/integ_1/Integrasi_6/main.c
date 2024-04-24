@@ -26,8 +26,9 @@
 #include "mtb_ssd1306.h"
 #include "GUI.h"
 
-#include "barcode.h"
-#include "rfid.h"
+//#include "barcode.h"
+//#include "rfid.h"
+#include "data_acquisition.h"
 
 #include "fsm.h"
 
