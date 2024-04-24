@@ -16,21 +16,46 @@
 #include <stdbool.h>
 
 // Define states
-typedef enum
+//typedef enum
+//{
+//    STATE_IDLE, // assign 0 ke STATE_IDLE
+//    STATE_SCAN, // assign 1 ke STATE_SCAN
+//    STATE_DISPLAY,
+//    STATE_SEND
+//} State;
+
+/*******************************************************************************
+* Macros
+*******************************************************************************/
+// State
+#define STATE_IDLE		(0)
+#define STATE_SCAN		(1)
+#define STATE_DISPLAY	(2)
+#define STATE_SEND		(4)
+
+#define len_epc 12
+
+typedef struct
 {
-    STATE_IDLE, // assign 0 ke STATE_IDLE
-    STATE_SCAN, // assign 1 ke STATE_SCAN
-    STATE_DISPLAY,
-    STATE_SEND
-} State;
+    int state;
+//    uint8_t epc[len_epc];
+    char* epc[len_epc];
+} TaskParameters;
+
+
+// Define a global mutex
+cy_mutex_t epc_mutex;
+
 
 /*******************************************************************************
 * Function Prototypes
 *******************************************************************************/
 //void display_state(State* state);
 void display_state(int* state);
-State handle_acquire_button(State *current_state);
-State handle_previous_button(State *current_state);
+//State handle_acquire_button(State *current_state);
+int handle_acquire_button(int *current_state);
+//State handle_previous_button(State *current_state);
+int handle_previous_button(int *current_state);
 
 
 /*******************************************************************************
@@ -53,7 +78,8 @@ State handle_previous_button(State *current_state);
 *	  ^--------------------------------------------------|
 *
 *******************************************************************************/
-State handle_acquire_button(State *current_state)
+//State handle_acquire_button(State *current_state)
+int handle_acquire_button(int *current_state)
 {
 	switch (*current_state)
 	{
@@ -84,22 +110,22 @@ State handle_acquire_button(State *current_state)
 *	  |------------------------------------------------------^
 *
 *******************************************************************************/
-State handle_previous_button(State *current_state)
-{
-	switch (*current_state)
-	{
-		case STATE_IDLE:
-			return STATE_SEND;
-		case STATE_SCAN:
-			return STATE_IDLE;
-		case STATE_DISPLAY:
-			return STATE_SCAN;
-		case STATE_SEND:
-			return STATE_DISPLAY;
-	}
-}
-
-
+//State handle_previous_button(State *current_state)
+//{
+//	switch (*current_state)
+//	{
+//		case STATE_IDLE:
+//			return STATE_SEND;
+//		case STATE_SCAN:
+//			return STATE_IDLE;
+//		case STATE_DISPLAY:
+//			return STATE_SCAN;
+//		case STATE_SEND:
+//			return STATE_DISPLAY;
+//	}
+//}
+//
+//
 /*******************************************************************************
 * Function Name: display_state
 ********************************************************************************

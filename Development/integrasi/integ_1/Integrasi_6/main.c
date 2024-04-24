@@ -14,6 +14,7 @@
 #include "cy_retarget_io.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "cyabs_rtos.h"
 
 // include file libary yang di-deklarasi-kan sendiri
 #include "button.h"
@@ -26,24 +27,23 @@
 #include "mtb_ssd1306.h"
 #include "GUI.h"
 
-#include "barcode.h"
+//#include "barcode.h"
+//#include "rfid.h"
 
 #include "fsm.h"
 
-/*******************************************************************************
-* Macros
-*******************************************************************************/
-// State
-#define STATE_IDLE		(0)
-#define STATE_SCAN		(1)
-#define STATE_DISPLAY	(2)
-#define STATE_SEND		(4)
 /*******************************************************************************
 * Global Variables
 *******************************************************************************/
 cy_rslt_t result;
 TaskHandle_t barcode_taskHandle;
 int state;
+//TaskParameters taskParams;
+TaskParameters taskParams =
+{
+   .state = 0,
+   .epc= {"00","01","02","03","04","05","06","07","08","09","10","11"}
+};
 
 /*******************************************************************************
 * Function Prototypes
@@ -68,6 +68,14 @@ void tasks_creation();
 *******************************************************************************/
 int main(void)
 {
+    // Initialize the mutex
+    cy_rslt_t result = cy_rtos_mutex_init(&epc_mutex, false);
+    if (result != CY_RSLT_SUCCESS)
+    {
+        printf("Mutex initialization failed.\n");
+        return -1;
+    }
+
     /* INISIASI KOMPONEN, INTERRUPT, DAN TASK */
     initialize_buttons_and_interrupts();
 
@@ -78,9 +86,9 @@ int main(void)
     printf("\x1b[2J\x1b[;H");
     printf("**************** Integration Test 001 ****************\r\n");
 
-    // Inisiasi State = state IDLE
-    state = STATE_IDLE;
-
+    // Inisiasi State = state IDLE dan epc = 00 .. 00
+//    state = STATE_IDLE;
+//
     /* MEMBUAT TASK DAN MEMULAI SCHEDULER */
     tasks_creation();
 
@@ -158,7 +166,7 @@ void tasks_creation()
     int retval;
 
     /* Create tasks to handle button events */
-	retval = xTaskCreate(button_task_acq, "Button Task Acquire", BTN_TASK_STACK_SIZE, &state, BTN_TASK_PRIORITY, NULL);
+	retval = xTaskCreate(button_task_acq, "Button Task Acquire", BTN_TASK_STACK_SIZE, (void *)&taskParams, BTN_TASK_PRIORITY, NULL);
 	if (pdPASS != retval)
 	{
 		printf("Button Task Acquire creation failed!\r\n");
@@ -177,21 +185,21 @@ void tasks_creation()
 	}
 
 	/* Create task to handle led events */
-	retval = xTaskCreate( red_led_task, RED_LED_TASK_NAME,LED_TASK_STACK_SIZE, &state, LED_TASK_PRIORITY, NULL );
+	retval = xTaskCreate( red_led_task, RED_LED_TASK_NAME,LED_TASK_STACK_SIZE, (void *)&taskParams, LED_TASK_PRIORITY, NULL );
 
 	if( pdPASS != retval )
 	{
 		 printf("%s did not start!\r\n", RED_LED_TASK_NAME);
 	}
 
-	retval = xTaskCreate( green_led_task, GREEN_LED_TASK_NAME,LED_TASK_STACK_SIZE, &state , LED_TASK_PRIORITY, NULL );
+	retval = xTaskCreate( green_led_task, GREEN_LED_TASK_NAME,LED_TASK_STACK_SIZE, (void *)&taskParams , LED_TASK_PRIORITY, NULL );
 	if (pdPASS != retval)
 	{
 		printf("Green LED Task Mode creation failed!\r\n");
 	}
 
 	/* Create task to handle oled events */
-	retval = xTaskCreate( oled_task, OLED_TASK_NAME,OLED_TASK_STACK_SIZE, &state, OLED_TASK_PRIORITY, NULL );
+	retval = xTaskCreate( oled_task, OLED_TASK_NAME,OLED_TASK_STACK_SIZE, (void *)&taskParams, OLED_TASK_PRIORITY, NULL );
 	if (pdPASS != retval)
 	{
 		printf("OLED Task Mode creation failed!\r\n");
@@ -204,12 +212,19 @@ void tasks_creation()
 		printf("Buzzer Task creation failed!\r\n");
 	}
 
-	/* Create task to handle barcode events */
-	retval = 	xTaskCreate(barcode_task, "Button task", BAR_TASK_STACK_SIZE, NULL, BAR_TASK_PRIORITY, &barcode_taskHandle);
-	if (pdPASS != retval)
-	{
-		printf("Buzzer Task creation failed!\r\n");
-	}
+//	/* Create task to handle barcode events */
+//	retval = 	xTaskCreate(barcode_task, "Button task", BAR_TASK_STACK_SIZE, NULL, BAR_TASK_PRIORITY, &barcode_taskHandle);
+//	if (pdPASS != retval)
+//	{
+//		printf("Barcode Task creation failed!\r\n");
+//	}
+
+//	/* Create task to handle rfid scanner events */
+//	retval = xTaskCreate( rfid_task, RFID_TASK_NAME,RFID_TASK_STACK_SIZE, (void *)&taskParams, RFID_TASK_PRIORITY, NULL );
+//	if (pdPASS != retval)
+//	{
+//		printf("RFID Task creation failed!\r\n");
+//	}
 
 	printf("Scheduler start!\r\n");
 

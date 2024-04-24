@@ -17,7 +17,7 @@
 /*******************************************************************************
 * Macros
 *******************************************************************************/
-//#define DEBOUNCING_DELAY_MS          (1000)   /* milliseconds */
+#define DEBOUNCING_DELAY_MS          (1000)   /* milliseconds */
 //#define BUZZER_BLINKING_DELAY_MS  (100)
 #define GPIO_INTERRUPT_PRIORITY (7u)
 
@@ -82,6 +82,8 @@ void buzzer_task( void * arg )
 				cyhal_gpio_write((cyhal_gpio_t)BUZZ_PIN, BUZZ_OFF);
 				vTaskDelay(pdMS_TO_TICKS(BUZZER_BLINKING_DELAY_MS)) ;
 			}
+			// vTaskDelay untuk debouncing
+			vTaskDelay(pdMS_TO_TICKS(DEBOUNCING_DELAY_MS)) ;
 		}
 
     	// jika button mode ditekan

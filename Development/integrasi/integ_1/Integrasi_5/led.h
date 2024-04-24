@@ -38,8 +38,10 @@ UBaseType_t __attribute__((used)) uxTopUsedPriority;
 *******************************************************************************/
 //void red_led_task(void* arg);
 //void green_led_task(void* arg);
-void red_led_task(int* state);
-void green_led_task(int* state);
+//void red_led_task(int* state);
+//void green_led_task(int* state);
+void red_led_task(void *pvParameters);
+void green_led_task(void *pvParameters);
 
 
 /*******************************************************************************
@@ -71,8 +73,12 @@ void green_led_task(int* state);
 *
 *******************************************************************************/
 //void red_led_task(void* arg)
-void red_led_task(int* state)
+//void red_led_task(int* state)
+void red_led_task(void *pvParameters)
 {
+	TaskParameters *params = (TaskParameters *)pvParameters;
+	int* state = &(params->state);
+
     printf("%s started!\r\n", RED_LED_TASK_NAME);
 
     /* Initialize the User LED */
@@ -143,9 +149,11 @@ void red_led_task(int* state)
 *
 *******************************************************************************/
 //void green_led_task(void* arg)
-void green_led_task(int* state)
+//void green_led_task(int* state)
+void green_led_task(void *pvParameters)
 {
-//    (void)arg;
+	TaskParameters *params = (TaskParameters *)pvParameters;
+	int* state = &(params->state);
 
     printf("%s started!\r\n", GREEN_LED_TASK_NAME);
 
@@ -157,37 +165,7 @@ void green_led_task(int* state)
 
     for(;;)
     {
-//    	if ((*arg == STATE_DISPLAY) || (*arg == STATE_SEND))
-//		{
-//			cyhal_gpio_write((cyhal_gpio_t)PIN_GREEN_LED, LED_ON);
-//		}
-//		else
-//		{
-//			cyhal_gpio_write((cyhal_gpio_t)PIN_GREEN_LED, LED_OFF);
-//		}
-//		cyhal_gpio_toggle((cyhal_gpio_t)PIN_GREEN_LED);
-//		vTaskDelay(1000);
 
-//    	if (true == gpio_intr_flag_acq)
-//		{
-//    		if (state == STATE_IDLE)
-//    		{
-//        		cyhal_gpio_write((cyhal_gpio_t)PIN_GREEN_LED, LED_OFF);
-//
-//    		}
-//    		else if (state == STATE_SCAN)
-//    		{
-//    			cyhal_gpio_write((cyhal_gpio_t)PIN_GREEN_LED, LED_OFF);
-//    		}
-//    		else if (state == STATE_DISPLAY)
-//    		{
-//    			cyhal_gpio_write((cyhal_gpio_t)PIN_GREEN_LED, LED_ON);
-//    		}
-//    		else if (state == STATE_SEND)
-//    		{
-//    			cyhal_gpio_write((cyhal_gpio_t)PIN_GREEN_LED, LED_ON);
-//    		}
-//		}
     	if ((*state == STATE_DISPLAY) || (*state == STATE_SEND))
         {
         	cyhal_gpio_write((cyhal_gpio_t)PIN_GREEN_LED, LED_ON);

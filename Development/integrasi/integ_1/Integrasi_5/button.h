@@ -49,7 +49,8 @@ static void gpio_interrupt_handler_mode(void *handler_arg, cyhal_gpio_event_t ev
 
 //void button_task_acq(void* arg);
 //void button_task_acq(void* state);
-void button_task_acq(int* state);
+//void button_task_acq(int* state);
+void button_task_acq(void *pvParameters);
 void button_task_prev(void* arg);
 void button_task_mode(void* arg);
 
@@ -115,9 +116,12 @@ static void gpio_interrupt_handler_mode(void *handler_arg, cyhal_gpio_event_t ev
 *   void *arg: Task arguments (unused)
 *
 *******************************************************************************/
-//void button_task_acq(void* state)
-void button_task_acq(int* state)
+void button_task_acq(void *pvParameters)
+//void button_task_acq(int* state)
 {
+    TaskParameters *params = (TaskParameters *)pvParameters;
+    int* state = &(params->state);
+
     printf("Button Task Acquire started!\r\n");
 
     for (;;)
@@ -128,17 +132,8 @@ void button_task_acq(int* state)
             gpio_intr_flag_acq = false;
             printf("Button Acquire pressed!\r\n");
 
-//            state++;
-//            if (state == STATE_SEND)
-//            {
-//            	state = STATE_IDLE;
-//            }
-
             // perpindahan state
             *state = handle_acquire_button(state);
-
-//            // perpindahan task dengan FSM
-//            *arg = handle_acquire_button(arg);
 
             // menampilkan state saat ini
             display_state(state);
@@ -172,11 +167,6 @@ void button_task_prev(void* arg)
             gpio_intr_flag_prev = false;
             printf("Button Previous pressed!\r\n");
 
-//            // perpindahan task dengan FSM
-//            *arg = handle_previous_button(arg);
-//
-//            // menampilkan state saat ini
-//            display_state(arg);
         }
 
         vTaskDelay(pdMS_TO_TICKS(DEBOUNCING_DELAY_MS)); // Debouncing delay
