@@ -1,0 +1,276 @@
+/*******************************************************************************
+* File Name:   oled.h
+* Description: implementasi task oled display (ssd1306)
+* Programmer: Bostang
+* Tanggal : 2024/04/07
+*******************************************************************************/
+
+/*******************************************************************************
+* Header Files
+*******************************************************************************/
+#include "cybsp.h"
+#include "mtb_ssd1306.h"
+#include "GUI.h"
+#include "cyhal.h"
+
+#include "utils.h"
+#include "oled_img.h"
+
+#include "fsm.h"
+
+#include "cyabs_rtos.h"
+
+#include "data_acquisition.h"
+
+#include "utils.h"
+
+/*******************************************************************************
+* Macros
+********************************************************************************/
+#define OLED_TASK_NAME         ("OLED Task")
+#define OLED_TASK_NAME         ("OLED Task")
+#define OLED_TASK_STACK_SIZE   (1024)
+#define OLED_TASK_PRIORITY     (5)
+
+#define OLED_HOR		(128)
+#define OLED_VER		(64)
+
+#define BLINKING_DELAY_MS		(1000)
+
+const GUI_FONT * OldFont;
+
+/*******************************************************************************
+* Global Variables
+*******************************************************************************/
+bool flag_epc_displayed = false;// menyatakan apakah tag sudah ditampilkan pada OLED/belum
+bool flag_oled_display = false; // agar state hanya tampil sekali -> di setiap state, kondisi pemeriksaan bergantian (if !flag.., if flag..)
+bool flag_epc_scanned = false; //menyatakan apakah sudah ada epc yang terbaca atau belum
+
+uint8_t* resultArrayBarcode; // untuk barcode
+char** resultArrayRFID; // untuk RFID
+
+bool scanner_selector; // selektor rfid/barcode
+
+
+
+/*******************************************************************************
+* Function Prototypes
+*******************************************************************************/
+void oled_task(void *pvParameters);
+
+
+/*******************************************************************************
+* Function Definitions
+*******************************************************************************/
+
+/*******************************************************************************
+* Function Name: oled_task
+********************************************************************************
+* Summary:
+* Mendeskripsikan perilaku OLED berdasarkan FSM
+*
+* Parameters:
+*  void* context passed from main function
+*
+* Return:
+*  void
+*
+*******************************************************************************/
+void oled_task(void *pvParameters)
+{
+    TaskParameters *params = (TaskParameters *)pvParameters;
+    int* state = &(params->state);
+
+    // selektor RFID/barcode
+	scanner_selector = initialize_selector();
+
+	/* Inisiasi block I2C */
+	cy_rslt_t result;
+	cyhal_i2c_t i2c_obj;
+
+	result = cyhal_i2c_init(&i2c_obj, CYBSP_I2C_SDA, CYBSP_I2C_SCL, NULL);
+	handle_error(result);
+
+	/* Inisiasi library OLED display */
+	result = mtb_ssd1306_init_i2c(&i2c_obj);
+	handle_error(result);
+
+	/* Inisiasi Library emWin */
+	GUI_Init();
+
+	// menampilkan logo inventrix di awal selama 2 detik
+	GUI_DrawBitmap(&bmBMP_inventrix_logo,0,0);
+
+	// delay 2 detik
+	vTaskDelay(pdMS_TO_TICKS(2*BLINKING_DELAY_MS)) ;
+	// membersihkan layar
+	GUI_Clear();
+
+	for(;;)
+	{
+
+		if (*state == STATE_IDLE)
+		{
+			if (!flag_oled_display)
+			{
+				GUI_GotoX(4);
+				GUI_DispString("State IDLE\n");
+				flag_oled_display = true;
+			}
+		}
+
+		else if (*state == STATE_SCAN)
+		{
+			// menampilkan pada OLED
+			if (flag_oled_display) // selang-seling
+			{
+				GUI_GotoX(4);
+				GUI_DispString("State SCAN\n");
+				flag_oled_display = false;
+				*state = STATE_DISPLAY; // langsung pindah ke state display
+			}
+			// melakukan scanning dengan RFID
+			if (!flag_epc_scanned)
+			{
+				// Proses scanning dengan RFID
+				if (scanner_selector == RFID_mode)
+				{
+					resultArrayRFID = data_acquisition_rfid_task();
+
+					// menampilkan hasil scanning RFID ke terminal
+					printf("Result array: ");
+					for (int i = 0;i<TX_BUF_SIZE;i++)
+					{
+						printf("%s ",resultArrayRFID[i]);
+					}
+					printf("\r\n");
+				}
+
+				// Proses scanning dengan barcode
+				else if (scanner_selector == barcode_mode)
+				{
+					size_t tx_length = TX_BUF_SIZE;
+					resultArrayBarcode = malloc(TX_BUF_SIZE * sizeof(uint8_t));
+
+					// melakukan scanning dengan barcode
+
+					resultArrayBarcode = data_acquisition_task();
+					cyhal_uart_write(&cy_retarget_io_uart_obj, (void*)resultArrayBarcode, &tx_length);
+				}
+
+				printf("\r\nEPC terdeteksi!\r\n");
+				flag_epc_scanned = true;
+			}
+		}
+		else if (*state == STATE_DISPLAY)
+		{
+			if (!flag_oled_display)
+			{
+				GUI_GotoX(4);
+				GUI_DispString("State DISPLAY\n");
+				flag_oled_display = true;
+			}
+
+			// Proses penampilan data untuk RFID
+			if (scanner_selector == RFID_mode)
+			{
+				// menampilkan epc hasil scan rfid
+				if (!flag_epc_displayed) // menampilkan epc sekali
+				{
+					GUI_GotoX(4);
+					for (int k = 0;k<TX_BUF_SIZE;k++)
+					 {
+	//					GUI_DispChar(stringBuffer[k]);
+						GUI_DispString(resultArrayRFID[k]);
+						GUI_DispString(" ");
+						if (k == 5)
+						{
+							GUI_DispString("\n");
+							GUI_GotoX(4);
+						}
+					 }
+					GUI_DispString("\n");
+
+					flag_epc_displayed = true;
+					*state = STATE_SEND; // langsung pindah ke state display
+				}
+			}
+
+			// Proses penampilan data untuk barcode
+			else if (scanner_selector == barcode_mode)
+			{
+				// mengubah tag dari byte array menjadi array of string
+				 // Convert to string
+				char* stringBuffer = (char*)malloc(TX_BUF_SIZE + 1); // +1 for null-terminator
+//				if (stringBuffer == NULL)
+//				{
+//					printf("Failed to allocate memory.\n");
+//					return 1; // Return error code or handle allocation failure
+//				}
+//
+				// Copy each character from tx_buf to stringBuffer
+				for (size_t i = 0; i < TX_BUF_SIZE; i++)
+				{
+					stringBuffer[i] = (char)resultArrayBarcode[i];
+				}
+				stringBuffer[TX_BUF_SIZE] = '\0'; // Null-terminate the string
+
+				for (int i = 0;i<TX_BUF_SIZE;i++)
+				{
+					printf("%c",stringBuffer[i]);
+				}
+				printf("\r\n");
+
+				// menampilkan epc hasil scan barcode
+				if (!flag_epc_displayed) // menampilkan epc sekali
+				{
+					GUI_GotoX(4);
+					for (int k = 0;k<TX_BUF_SIZE;k++)
+					 {
+						GUI_DispChar(stringBuffer[k]);
+					 }
+					GUI_DispString("\n");
+
+					flag_epc_displayed = true;
+					*state = STATE_SEND; // langsung pindah ke state display
+				}
+
+			}
+		}
+
+		else if (*state == STATE_SEND)
+		{
+			if (flag_oled_display)
+			{
+				GUI_GotoX(4);
+				GUI_DispString("State SEND\n");
+				flag_oled_display = false;
+			}
+		}
+		else
+		{
+			GUI_DispString("State ERROR");
+		}
+
+		if (true == gpio_intr_flag_mode)
+		{
+			// menampilkan logo tengkorak awal
+			GUI_DrawBitmap(&bmBMP_skull,0,0);
+
+			// delay 1 detik
+			vTaskDelay(pdMS_TO_TICKS(BLINKING_DELAY_MS)) ;
+
+			// membersihkan layar
+			GUI_Clear();
+
+			// menampilkan countdown
+			OldFont = GUI_SetFont(&GUI_FontD64); // Buffer old font; mengubah font
+
+			for (int k = 10;k>0;k--)
+			{
+				GUI_DispDecAt(k,16,0,2); // Disp value
+				vTaskDelay(pdMS_TO_TICKS(BLINKING_DELAY_MS)) ;
+			}
+		}
+	}
+}

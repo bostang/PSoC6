@@ -1,0 +1,404 @@
+Loading the ModusToolbox Technology Packs and Early Access Packs
+Finished loading the ModusToolbox Technology Packs and Early Access Packs (9 ms)
+Loading the tools information
+Finished loading the tools information (62 ms)
+Loading the application in directory 'C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1'
+creating application information from 'get_app_info' data
+finished creating application information from 'get_app_info' data (64 ms)
+Finished loading the application data (1236 ms total, 1162 make)
+Loading asset repository references
+Finished loading the asset repository references (815 ms)
+Loading the manifest data
+Loading super manfiest files from all sources
+Getting manifests from remote and/or local sources
+Processing system manifest 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Downloading super manifest file 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Finished loading super manifest files from all sources
+Finished download of file 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Starting to parse super manifest with URL 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Finished parsing super manifest with URL 'https://modustoolbox.infineon.com/manifests/mtb-super-manifest/v2.X/mtb-super-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/mtb-ce-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/mtb-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/cce-app-manifest/raw/v2.X/cce-app-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Altia-Marketing/altia-ce-manifest/raw/main/altia-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/CyberonEBU/cyberon-mtb-ce-manifest/raw/main/cyberon-mtb-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/edgeimpulse/edgeimpulse-ce-manifest/raw/main/edgeimpulse-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/golioth/mtb-golioth-ce-manifest/raw/main/mtb-golioth-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/memfault/mtb-memfault-ce-manifest/raw/main/mtb-memfault-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/RutronikSystemSolutions/rutronik-ce-manifest/raw/main/rutronik-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/sensiml/sensiml-ce-manifest/raw/main/sensiml-ce-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-capabilities-manifest.json'
+Downloading manifest file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Inventek/inventek-bsp-manifest/raw/main/inventek-bsp-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Inventek/inventek-bsp-manifest/raw/main/inventek-bsp-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/RutronikSystemSolutions/rutronik-bsp-manifest/raw/main/rutronik-bsp-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/RutronikSystemSolutions/rutronik-bsp-manifest/raw/main/rutronik-bsp-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-manifest.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-dependencies-manifest.xml'
+Downloading manifest file 'https://github.com/CyberonEBU/cyberon-mtb-mw-manifest/raw/main/cyberon-mtb-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/golioth/mtb-golioth-mw-manifest/raw/main/mtb-golioth-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/memfault/mtb-memfault-mw-manifest/raw/main/mtb-memfault-mw-manifest-fv2.xml'
+Downloading manifest file 'https://github.com/sensiml/sensiml-mw-manifest/raw/main/sensiml-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/mtb-ce-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-ce-manifest/raw/v2.X/mtb-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-app-manifest/raw/v2.X/mtb-bt-app-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/cce-app-manifest/raw/v2.X/cce-app-manifest-fv2.xml'
+Finished download of file 'https://github.com/Altia-Marketing/altia-ce-manifest/raw/main/altia-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/CyberonEBU/cyberon-mtb-ce-manifest/raw/main/cyberon-mtb-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/edgeimpulse/edgeimpulse-ce-manifest/raw/main/edgeimpulse-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/golioth/mtb-golioth-ce-manifest/raw/main/mtb-golioth-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/memfault/mtb-memfault-ce-manifest/raw/main/mtb-memfault-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/RutronikSystemSolutions/rutronik-ce-manifest/raw/main/rutronik-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/sensiml/sensiml-ce-manifest/raw/main/sensiml-ce-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-capabilities-manifest.json'
+Finished download of file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bsp-manifest/raw/v2.X/mtb-bsp-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-bsp-manifest/raw/v2.X/mtb-bt-bsp-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Inventek/inventek-bsp-manifest/raw/main/inventek-bsp-manifest-fv2.xml'
+Finished download of file 'https://github.com/Inventek/inventek-bsp-manifest/raw/main/inventek-bsp-dependencies-manifest.xml'
+Finished download of file 'https://github.com/RutronikSystemSolutions/rutronik-bsp-manifest/raw/main/rutronik-bsp-manifest-fv2.xml'
+Finished download of file 'https://github.com/RutronikSystemSolutions/rutronik-bsp-manifest/raw/main/rutronik-bsp-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-mw-manifest/raw/v2.X/mtb-mw-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-bt-mw-manifest/raw/v2.X/mtb-bt-mw-dependencies-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-manifest.xml'
+Finished download of file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/Infineon/mtb-wifi-mw-manifest/raw/v2.X/mtb-wifi-mw-dependencies-manifest.xml'
+Finished download of file 'https://github.com/CyberonEBU/cyberon-mtb-mw-manifest/raw/main/cyberon-mtb-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/golioth/mtb-golioth-mw-manifest/raw/main/mtb-golioth-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/memfault/mtb-memfault-mw-manifest/raw/main/mtb-memfault-mw-manifest-fv2.xml'
+Finished download of file 'https://github.com/sensiml/sensiml-mw-manifest/raw/main/sensiml-mw-manifest-fv2.xml'
+Finished loading the manifest data (13547 ms)
+Loading the device db
+Finished loading the device db (24347 ms)
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+0 error(s), 0 warning(s)
+Successfully acquired the information.
+Requested to remove the asset 'secure-sockets'.
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Requested to remove the asset 'wifi-connection-manager'.
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Requested to remove the asset 'http-client'.
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+
+Changelog for project "WMSHardware_v1_1":
+secure-sockets version release-v3.5.0 removed
+wifi-connection-manager version release-v3.3.1 removed
+http-client version release-v1.5.0 removed
+
+Click "Update" to commit the changesUpdating application "WMSHardware_v1_1" ...
+Starting to commit changes to the filesystem and project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Removed the file 'C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/deps/secure-sockets.mtb'.
+Removed the file 'C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/deps/wifi-connection-manager.mtb'.
+Removed the file 'C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/deps/http-client.mtb'.
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-port/release-v2.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emfile/release-v2.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emwin/release-v6.32.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-port/release-v2.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/freertos/release-v10.4.302 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emfile/release-v2.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/abstraction-rtos/release-v1.7.6 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emwin/release-v6.32.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cat1cm0p/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/freertos/release-v10.4.302 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/abstraction-rtos/release-v1.7.6 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cat1cm0p/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/.modustoolbox/global/device-db/release-v4.14.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-hal-cat1/release-v2.6.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-pdl-cat1/release-v3.10.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/recipe-make-cat1a/release-v2.2.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-hal-cat1/release-v2.6.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-port/release-v2.4.1 -c advice.detachedHead=false checkout release-v2.4.1 --force
+Success: git -C C:/Users/bosta/.modustoolbox/global/device-db/release-v4.14.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-pdl-cat1/release-v3.10.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emfile/release-v2.0.0 -c advice.detachedHead=false checkout release-v2.0.0 --force
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/recipe-make-cat1a/release-v2.2.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emwin/release-v6.32.0 -c advice.detachedHead=false checkout release-v6.32.0 --force
+HEAD is now at e1fef04 Upload emfile 2.0.0.623 [1029]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emfile/release-v2.0.0 -c advice.detachedHead=false checkout release-v2.0.0 --force
+Finished processing emfile
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+HEAD is now at d604a6f Upload display-oled-ssd1306 [347]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
+Finished processing display-oled-ssd1306
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/freertos/release-v10.4.302 -c advice.detachedHead=false checkout release-v10.4.302 --force
+HEAD is now at db7f962 Upload retarget-io [1515]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing retarget-io
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00 -c advice.detachedHead=false checkout 202103.00 --force
+HEAD is now at eec6019 Upload freertos 10.4.302.343
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/freertos/release-v10.4.302 -c advice.detachedHead=false checkout release-v10.4.302 --force
+Finished processing freertos
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/abstraction-rtos/release-v1.7.6 -c advice.detachedHead=false checkout release-v1.7.6 --force
+HEAD is now at cebb8b6 Upload aws-iot-device-sdk-port 2.4.1.483 [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-port/release-v2.4.1 -c advice.detachedHead=false checkout release-v2.4.1 --force
+Finished processing aws-iot-device-sdk-port
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+HEAD is now at 08904a2 Upload cat1cm0p 1.5.0.403 [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing cat1cm0p
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+HEAD is now at 5728609 Upload emwin 6.32.0.345 [1459]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emwin/release-v6.32.0 -c advice.detachedHead=false checkout release-v6.32.0 --force
+Finished processing emwin
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+HEAD is now at 01150a0b Update release workflows to run on Ubuntu 18.04 runners (#1575)
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00 -c advice.detachedHead=false checkout 202103.00 --force
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
+HEAD is now at
+ 97cf620 Upload clib-support [1864]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+Finished processing clib-support
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+HEAD is now at 345e1b1 Upload abstraction-rtos [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/abstraction-rtos/release-v1.7.6 -c advice.detachedHead=false checkout release-v1.7.6 --force
+Finished processing abstraction-rtos
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-hal-cat1/release-v2.6.0 -c advice.detachedHead=false checkout release-v2.6.0 --force
+HEAD is now at a74be8b Upload core-lib [1796]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
+Finished processing core-lib
+Starting: git -C C:/Users/bosta/.modustoolbox/global/device-db/release-v4.14.0 -c advice.detachedHead=false checkout release-v4.14.0 --force
+HEAD is now at 58bf444 Upload core-make 3.3.1.5153 [2252]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+Finished processing core-make
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-pdl-cat1/release-v3.10.0 -c advice.detachedHead=false checkout release-v3.10.0 --force
+HEAD is now at fff5e547 Upload device-db 4.14.0.5494 [2287]
+Success: git -C C:/Users/bosta/.modustoolbox/global/device-db/release-v4.14.0 -c advice.detachedHead=false checkout release-v4.14.0 --force
+Finished processing device-db
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+HEAD is now at 3f18eed Upload recipe-make-cat1a 2.2.1.5190 [2313]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+Finished processing recipe-make-cat1a
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00 -c protocol.file.allow=always submodule update --init --force
+HEAD is now at ce02f64 Upload cmsis 5.8.0.50
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+Finished processing cmsis
+HEAD is now at dc2df2d Upload mtb-pdl-cat1 3.10.0.32115 [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-pdl-cat1/release-v3.10.0 -c advice.detachedHead=false checkout release-v3.10.0 --force
+Finished processing mtb-pdl-cat1
+Submodule path 'demos/jobs/jobs_demo_mosquitto/libmosquitto': checked out '0bdf630c2757047dcbf1fd3ad6b7a245addd87fa'
+Submodule path 'libraries/3rdparty/CMock': checked out '150573c742ce15061a0b675aa0f8e29c85008062'
+Submodule path 'libraries/aws/device-defender-for-aws-iot-embedded-sdk': checked out '548b4688b26d16d0e6134d7d93dcbae103994e40'
+Submodule path 'libraries/aws/device-shadow-for-aws-iot-embedded-sdk': checked out 'ff5a3e174ca8f805051c14d9c15b500196e3f79a'
+Submodule path 'libraries/aws/jobs-for-aws-iot-embedded-sdk': checked out '19788445bca7f8f85167c83ac12379d3d1022295'
+HEAD is now at 2ede4ff Upload mtb-hal-cat1 [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-hal-cat1/release-v2.6.0 -c advice.detachedHead=false checkout release-v2.6.0 --force
+Finished processing mtb-hal-cat1
+Submodule path 'libraries/aws/ota-for-aws-iot-embedded-sdk': checked out '666241d0f643b07d5146a3715b649d80f8135e0b'
+Submodule path 'libraries/standard/backoffAlgorithm': checked out '741697917a5b9264cd5c11e54e23ce3fe3472636'
+Submodule path 'libraries/standard/coreHTTP': checked out '88c836c18f46c5ab862810f56b023ecb2ddf7b7b'
+Submodule path 'libraries/standard/coreJSON': checked out '19b48dbf1b1f8753d61d8e2916137904ce12b293'
+Submodule path 'libraries/standard/coreMQTT': checked out 'ffb68182abfab5e2b9df6ac24b17e3e0fec7b67f'
+Submodule path 'libraries/standard/corePKCS11': checked out 'a739b86f90bde81aeea19dab6315250983730211'
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00 -c protocol.file.allow=always submodule update --init --force
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00/libraries/3rdparty/CMock -c protocol.file.allow=always submodule update --init --force
+Submodule path 'vendor/c_exception': checked out '71b47be7c950f1bf5f7e5303779fa99a16224bb6'
+Submodule path 'vendor/unity': checked out 'cf949f45ca6d172a177b00da21310607b97bc7a7'
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00/libraries/3rdparty/CMock -c protocol.file.allow=always submodule update --init --force
+Finished processing aws-iot-device-sdk-embedded-C
+Failed to commit changes to the project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+ERROR:there was an error retreiving the asset 'https://github.com/aws/aws-iot-device-sdk-embedded-C' commit '202103.00' - ERROR:C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00/libraries/aws/device-defender-for-aws-iot-embedded-sdk: Failed to open Git repository: path too long: 'C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/aws-iot-device-sdk-embedded-C/202103.00/.git/modules/libraries/aws/device-defender-for-aws-iot-embedded-sdk/'
+
+1 error(s), 0 warning(s)
+ERROR:Failed to update application "WMSHardware_v1_1"
+
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+
+Summary:
+ERROR:Failed to update application "WMSHardware_v1_1"
+Successfully refreshed dependencies.
+WARNING: Not done.
+Requested to remove the asset 'aws-iot-device-sdk-port'.
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+
+Changelog for project "WMSHardware_v1_1":
+secure-sockets version release-v3.5.0 removed
+wifi-connection-manager version release-v3.3.1 removed
+http-client version release-v1.5.0 removed
+aws-iot-device-sdk-port version release-v2.4.1 removed
+aws-iot-device-sdk-embedded-C version 202103.00 removed
+
+Click "Update" to commit the changesUpdating application "WMSHardware_v1_1" ...
+Starting to commit changes to the filesystem and project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Removed the file 'C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/deps/aws-iot-device-sdk-port.mtb'.
+Removed the file 'C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/libs/aws-iot-device-sdk-embedded-C.mtb'.
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emfile/release-v2.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emwin/release-v6.32.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/freertos/release-v10.4.302 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emwin/release-v6.32.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/display-oled-ssd1306/release-v1.0.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/abstraction-rtos/release-v1.7.6 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emfile/release-v2.0.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cat1cm0p/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/freertos/release-v10.4.302 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/retarget-io/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/abstraction-rtos/release-v1.7.6 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cat1cm0p/release-v1.5.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/clib-support/release-v1.4.2 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/.modustoolbox/global/device-db/release-v4.14.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-make/release-v3.3.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-hal-cat1/release-v2.6.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cmsis/release-v5.8.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-pdl-cat1/release-v3.10.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-lib/release-v1.4.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/recipe-make-cat1a/release-v2.2.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Success: git -C C:/Users/bosta/.modustoolbox/global/device-db/release-v4.14.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emwin/release-v6.32.0 -c advice.detachedHead=false checkout release-v6.32.0 --force
+HEAD is now at 5728609 Upload emwin 6.32.0.345 [1459]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emwin/release-v6.32.0 -c advice.detachedHead=false checkout release-v6.32.0 --force
+Finished processing emwin
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
+HEAD is now at d604a6f Upload display-oled-ssd1306 [347]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/display-oled-ssd1306/release-v1.0.2 -c advice.detachedHead=false checkout release-v1.0.2 --force
+Finished processing display-oled-ssd1306
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emfile/release-v2.0.0 -c advice.detachedHead=false checkout release-v2.0.0 --force
+HEAD is now at e1fef04 Upload emfile 2.0.0.623 [1029]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/emfile/release-v2.0.0 -c advice.detachedHead=false checkout release-v2.0.0 --force
+Finished processing emfile
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/freertos/release-v10.4.302 -c advice.detachedHead=false checkout release-v10.4.302 --force
+HEAD is now at eec6019 Upload freertos 10.4.302.343
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/freertos/release-v10.4.302 -c advice.detachedHead=false checkout release-v10.4.302 --force
+Finished processing freertos
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+HEAD is now at db7f962 Upload retarget-io [1515]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/retarget-io/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing retarget-io
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/abstraction-rtos/release-v1.7.6 -c advice.detachedHead=false checkout release-v1.7.6 --force
+HEAD is now at 345e1b1 Upload abstraction-rtos [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/abstraction-rtos/release-v1.7.6 -c advice.detachedHead=false checkout release-v1.7.6 --force
+Finished processing abstraction-rtos
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/recipe-make-cat1a/release-v2.2.1 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-pdl-cat1/release-v3.10.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-hal-cat1/release-v2.6.0 fetch --recurse-submodules=no --tags --force cypress --update-head-ok "refs/heads/*:refs/heads/*" --quiet
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+HEAD is now at 08904a2 Upload cat1cm0p 1.5.0.403 [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cat1cm0p/release-v1.5.0 -c advice.detachedHead=false checkout release-v1.5.0 --force
+Finished processing cat1cm0p
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
+HEAD is now at 97cf620 Upload clib-support [1864]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/clib-support/release-v1.4.2 -c advice.detachedHead=false checkout release-v1.4.2 --force
+Finished processing clib-support
+Starting: git -C C:/Users/bosta/.modustoolbox/global/device-db/release-v4.14.0 -c advice.detachedHead=false checkout release-v4.14.0 --force
+HEAD is now at 58bf444 Upload core-make 3.3.1.5153 [2252]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-make/release-v3.3.1 -c advice.detachedHead=false checkout release-v3.3.1 --force
+Finished processing core-make
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+HEAD is now at
+ a74be8b Upload core-lib [1796]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/core-lib/release-v1.4.1 -c advice.detachedHead=false checkout release-v1.4.1 --force
+Finished processing core-lib
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-pdl-cat1/release-v3.10.0 -c advice.detachedHead=false checkout release-v3.10.0 --force
+HEAD is now at ce02f64 Upload cmsis 5.8.0.50
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/cmsis/release-v5.8.0 -c advice.detachedHead=false checkout release-v5.8.0 --force
+Finished processing cmsis
+Starting: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-hal-cat1/release-v2.6.0 -c advice.detachedHead=false checkout release-v2.6.0 --force
+HEAD is now at
+ 3f18eed Upload recipe-make-cat1a 2.2.1.5190 [2313]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/recipe-make-cat1a/release-v2.2.1 -c advice.detachedHead=false checkout release-v2.2.1 --force
+Finished processing recipe-make-cat1a
+HEAD is now at dc2df2d Upload mtb-pdl-cat1 3.10.0.32115 [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-pdl-cat1/release-v3.10.0 -c advice.detachedHead=false checkout release-v3.10.0 --force
+Finished processing mtb-pdl-cat1
+HEAD is now at 2ede4ff Upload mtb-hal-cat1 [2307]
+Success: git -C C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/mtb_shared/mtb-hal-cat1/release-v2.6.0 -c advice.detachedHead=false checkout release-v2.6.0 --force
+Finished processing mtb-hal-cat1
+HEAD is now at fff5e547 Upload device-db 4.14.0.5494 [2287]
+Success: git -C C:/Users/bosta/.modustoolbox/global/device-db/release-v4.14.0 -c advice.detachedHead=false checkout release-v4.14.0 --force
+Finished processing device-db
+Successfully committed changes to the project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+0 error(s), 0 warning(s)
+Successfully updated application "WMSHardware_v1_1"
+Updating Launch Configurations ...
+Calling "make eclipse" ...
+Tools Directory: C:/Users/bosta/ModusToolbox/tools_3.1
+Searching installed tools in progress...
+Searching installed tools complete
+Initializing build: mtb-example-psoc6-secure-blinkyled-freertos Debug APP_CY8CPROTO-062-4343W GCC_ARM
+Prebuild operations complete
+Auto-discovery in progress...
+Auto-discovery complete
+Commencing build operations...
+Tools Directory: C:/Users/bosta/ModusToolbox/tools_3.1
+Constructing build rules...
+Build rules construction complete
+==============================================================================
+= Building application =
+==============================================================================
+Generating compilation database file...
+-> ./build/compile_commands.json
+Compilation database file generation complete
+Generated C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/.cproject
+Generated C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/.project
+Generated C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/.mtbLaunchConfigs/WMSHardware_v1_1 Attach (KitProg3_MiniProg4).launch
+Generated C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/.mtbLaunchConfigs/WMSHardware_v1_1 Debug (KitProg3_MiniProg4).launch
+Generated C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/.mtbLaunchConfigs/WMSHardware_v1_1 Erase (KitProg3_MiniProg4).launch
+Generated C:/Users/bosta/OneDrive/Documents/Programming/PSoC6/Development/integrasi/integ_2/WMSHardware_v1_1/.mtbLaunchConfigs/WMSHardware_v1_1 Program (KitProg3_MiniProg4).launch
+Instructions:
+1. Open Eclipse IDE for ModusToolbox
+2. Select 'Import Existing Application In-Place' from the QuickPanel
+3. Browse to the application root directory
+"make eclipse" succeeded
+
+Starting to refresh dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+Refreshed all dependencies for project 'mtb-example-psoc6-secure-blinkyled-freertos'.
+
+Summary:
+Successfully updated application "WMSHardware_v1_1"
+Successfully refreshed dependencies.
+Done.
