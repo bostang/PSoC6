@@ -113,4 +113,9 @@ Document title: _Inventrix &copy;WMS hardware_
 5. Data hasil RFID diubah dari _byte array_ ke format _readable_ (_high byte_ dan _low byte_ dipisahkan) (misal:  `0x03 0x05 0x24 0x16 0x45 0x15 0x3A`  menjadi `0305241645153A`)
 6. Pengembangan kode SD card (set SSID & password Wifi, konten RFID tag untuk di-rewrite
 
+### Extra notes
+1. hapus baris `free(variabel_kirim);` pada `http_client.h` karena dia menyebabkan error dan task gagal.
+2. Bug : buzzer kadang-kadang berdering sekali atau terus berdering (ekspektasi hanya dua kali). Ini kemungkinan masalah _scheduling_
+
+
 Inventrix&copy;2024
