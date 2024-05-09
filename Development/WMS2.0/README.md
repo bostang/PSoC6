@@ -14,8 +14,10 @@ Berikut adalah struktur file dari aplikasi ini:
 
 - `sd.h` : implementasi perilaku komponen SD card reader.
 - `utils.h` : fungsi-fungsi tambahan seperti error handling, konversi array uint8_t menjadi string.
-- `barcode.h` : implementasi perilaku komponen barcode scanner..
-- `rfid.h` : implementasi perilaku komponen rfid scanner.
+- ~`barcode.h` : implementasi perilaku komponen barcode scanner..~
+- ~`rfid.h` : implementasi perilaku komponen rfid scanner.~
+- `data_acquisition.h` : implementasi fungsi scanning dengan barcode / rfid scanner.
+- `http_client.h` : implementasi fungsi untuk kirim data ke back-end
 - `button.h` : implementasi button : acquire, previous, mode,
 - `buzzer.h` : implementasi perilaku komponen buzzer.
 - `led.h` : implementasi perilaku komponen led (merah, hijau).
