@@ -84,7 +84,14 @@ Untuk memastikan taks `http_client` berjalan setelah data sukses dierima dari fu
 
 ### Penjadwalan RTOS
 
-Berikut adalah _timing diagram_ RTOS dari program hardware ini:
+Mikrokontroller yang digunakan memiliki satu buah _core yang secara efektif dapat digunakan sehingga dalam satu waktu, hanya terdapat satu _task_ saja yang dapat berjalan.
+
+![state transitiopn diagram running/not running](./images/state_transition.png)
+
+Secara lebih lengkap, berikut adalah _state chart_ dari task yang ada :
+![state chart task](./images/task_state_machine.png)
+
+Karena jenis penjadwalan yang digunakan adalah _cooperative scheduling_, maka kapan task berjalan ditentukan oleh kita. Dalam kasus ini, setiap task akan berjalan dalam satu siklus (satu kali iterasi `for(;;)`) lalul kemudian memberikan kesempatan pada task lain untuk berjalan (`taskYIELD()`). Berikut adalah _timing diagram_ RTOS dari program hardware ini:
 
 ![timing diagram utama](./images/timing_diagram_no_interrupt.png)
 
