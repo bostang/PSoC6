@@ -82,6 +82,19 @@ Untuk memastikan taks `http_client` berjalan setelah data sukses dierima dari fu
 
 2. Barcode dan RFID awalnya dibuat dalam masing-masing **task** terpisah yang diimplementasikan di file terpisah `barcode.h` serta `rfid.h`. Namun setelah dipertimbangkan kembali, kedua komponen tersebut digabung menjadi sebuah **function** yang dipanggil yang diimplementasikan di `data_acquisition.h`. hal ini disebabkan kedua tipe scanner tidak akan berjalan secara bersama-sama.
 
+### Penjadwalan RTOS
+
+Berikut adalah _timing diagram_ RTOS dari program hardware ini:
+
+![timing diagram utama](./images/timing_diagram_no_interrupt.png)
+
+`button ACQ` memiliki prioritas tertinggi maka akan dijalankan pertama kali. Ketika task `button ACQ`  melakukan `taskYIELD()`, maka yang melanjutkan adalah task dengan prioritas tinggi selanjutan yaitu `button PREV`. saat `taskYIELD()` berikutnya, dilanjut dnegan `button MODE`. Setelah itu, yang lanjut bukanlah `button ACQ` lagi karena masih berada pada _blocked state_ akibat pemanggilan `vTaskDelay()` di akhir satu siklusnya, namun task dengan priority yang lebih rendah yaitu task `OLED & data acquisition`, `task buzzer`, `task RED LED`, dan `task GREEN LED` secara bergantian dengan durasi berbeda-beda (tergantung durasi satu siklus masing-masing task). Pada kondisi ini, task _HTTP_ tidak berjalan karena masih menunggu `Event_Semaphore` dari task `OLED & data acquisition`. Semua task sedang berada dalam keadaan block karena terdapat `vTaskDelay()` di akhir masing-masing task sehingga terdapat kondisi _IDLE_ yang tercapai. Task pertama yang selesai di-_delay_ (keluar dari state _BLOCK_), maka akan dijalankan dan demikian seterusnya.
+
+Saat salah satu button ditekan (misalkan button `ACQ`), maka akan terjadi hardware interrupt yang menyebabkan state berubah. Saat state berubah dari state _IDLE_ menuju state _SCAN_, maka yang berjalan adalah task OLED sampai menerima data dari Barcode scanner. Saat sudah menerima data, maka secara otomatis akan pindah ke state _DISPLAY_ untuk ditampilkan ke OLED lalu berpindah ke state _SEND_. Sebelum memasuki state _SEND_, maka semaphore akan diberikan dari task _OLED_ menuju task _HTTP_ sehingga yang berjalan adalah task _HTTP_.
+
+![timing diagram button ditekan](./images/timing_diagram_interrupt_button.png)
+
+
 ## Related resources
 
 **Resources**  | **Links**
